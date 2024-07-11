@@ -1,0 +1,20 @@
+.otp-v-wrapper{
+    padding: 10px;
+    width: 100%;
+    background: #eef6fc;
+}
+.otp-v-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid red;
+    gap: 100px;
+}
+.otp-left{
+    height: 100%;
+    width: 50%;
+}
+.otp-left img{
+    width:100%;
+    height: 100%;
+}

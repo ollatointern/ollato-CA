@@ -1,10 +1,32 @@
 import React from 'react'
+import { useState } from 'react';
 import './forgotPassword.css';
 import loginImg from '../../assets/loginImg.png';
 import {androidArrowBack} from 'react-icons-kit/ionicons/androidArrowBack'
 import Icon from 'react-icons-kit'
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 const ForgotPassword = () => {
+  const [input , setInput] = useState('');
+  // const history = useHistory();
+  const validateInput = (input) =>{
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobileRegex = /^[0-9]{10}$/;
+
+    if(emailRegex.test(input)){
+     return 'email';
+    }else if(mobileRegex.test(input)){
+     return 'mobile'
+    }else{
+     return 'Invalid'
+    }
+ }
+
+
+  const handelSubmit  = (e) =>{
+    e.preventDefault();
+
+    // history.push('/enter-otp')
+  }
   return (
     <>
         <section className="f-pass-wrapper">
@@ -24,18 +46,23 @@ const ForgotPassword = () => {
                       Enter your email address and we'll send you a OTP to reset your password.
                       </p>
                      </div>
-                     <label htmlFor="">
+                   <form onSubmit={handelSubmit} >
+                   <label htmlFor="">
                             E-Mail
-                            <input type="email"
+                            <input type="text"
+                            onChange={(e) => setInput(e.target.value)}
                               placeholder="Enter E-Mail" 
                               required
                               />
                      </label>
-                     <Link to='/OTPVerification'>
-                      <button className="send-btn">
+                   </form>
+                    
+                     <Link to='/enterOTP'>
+                     <button className="send-btn" type='submit'>
                           SEND
                       </button>
                      </Link>
+                     
                 </div>
             </div>
         </section>
