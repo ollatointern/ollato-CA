@@ -8,12 +8,12 @@
     
     align-items:center;
     justify-content: flex-start;
-    border: 1px solid red;
+ 
     gap: 100px;
 }
 .login-left{
-    border: 2px solid black;
-   /* flex-basis:500px; */
+    
+  
    height: 100%;
    width: 50%;
 }
@@ -22,7 +22,7 @@
     height: 100%;
 }
 .login-right{
-    border: 2px solid pink;
+
     flex-basis: 2;
 }
 
