@@ -12,6 +12,11 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+<<<<<<< HEAD
+=======
+    "react-icon": "^1.0.0",
+    "react-icons-kit": "^2.0.0",
+>>>>>>> student-panel
     "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
