@@ -17,3 +17,129 @@
 .reg-container{
 max-width: 50%;
 }
+.login-wrapper{
+    padding: 10px;
+    width: 100%;
+    background: #EEF6FC;
+}
+.login-container{
+    display: flex;
+    
+    align-items:center;
+    justify-content: flex-start;
+    border: 1px solid red;
+    gap: 100px;
+}
+.login-left{
+    border: 2px solid black;
+   /* flex-basis:500px; */
+   height: 100%;
+   width: 50%;
+}
+.login-left img{
+    width:100%;
+    height: 100%;
+}
+.login-right{
+    border: 2px solid pink;
+    flex-basis: 2;
+}
+
+.loginHead{
+    color: #0D2D44;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 40px;
+}
+.loginForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginForm label{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+}
+.loginForm label input{
+    width: 540px;
+    height: 64px;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    padding: 20px 16px;
+    
+}
+
+.loginForm input{
+    width: 540px;
+    height: 64px;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    padding: 20px 16px;
+    
+}
+
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.forget-pass{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: -20px;
+}
+
+.or{
+margin-top: 30px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.or .line1,
+.or .line2{
+ width: 220px;
+ height: 1px;
+ background: lightslategrey;
+}
+
+.signinOTP{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 30px;
+
+}
+.signinOTP p{
+
+font-size: 18px;
+font-weight:400 ;
+color: #2170AC;
+
+}
+
+.createAccount{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
