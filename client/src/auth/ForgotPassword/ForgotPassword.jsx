@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 import './forgotPassword.css';
-import loginImg from '../../assets/loginImg.png';
+// import loginImg from '../../assets/loginImg.png';
 import {androidArrowBack} from 'react-icons-kit/ionicons/androidArrowBack'
 import Icon from 'react-icons-kit'
 import { Link  } from 'react-router-dom';
+import Logo from '../../assets/ollatoLogo.png'
 const ForgotPassword = () => {
   const [input , setInput] = useState('');
   // const history = useHistory();
@@ -32,7 +33,7 @@ const ForgotPassword = () => {
         <section className="f-pass-wrapper">
             <div className="f-pass-container">
                 <div className="f-pass-left">
-                     <img src={loginImg} alt="" />
+                     <img src={Logo} alt="" />
                 </div>
                 <div className="f-pass-right">
                     <div className="back-arrow">

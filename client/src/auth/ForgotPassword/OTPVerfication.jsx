@@ -1,5 +1,6 @@
 import React from 'react'
 import loginImg from '../../assets/loginImg.png';
+import Logo from '../../assets/ollatoLogo.png'
 import './otpVerification.css';
 import {androidArrowBack} from 'react-icons-kit/ionicons/androidArrowBack'
 import Icon from 'react-icons-kit'
@@ -10,7 +11,7 @@ const OTPVerfication = () => {
         <section className="otp-v-wrapper">
             <div className="otp-v-container">
                 <div className="otp-left">
-                     <img src={loginImg} alt="" />
+                     <img src={Logo} alt="" />
                 </div>
                 <div className="otp-right">
                 <div className="back-arrow">

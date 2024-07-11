@@ -1,6 +1,7 @@
 import React from 'react'
 import './resetPassword.css'
 import loginImg from '../../assets/loginImg.png';
+import Logo from '../../assets/ollatoLogo.png'
 
 import {androidArrowBack} from 'react-icons-kit/ionicons/androidArrowBack'
 import Icon from 'react-icons-kit'
@@ -11,7 +12,7 @@ const ResetPassword = () => {
         <section className="reset-pass-wrapper">
             <div className="reset-pass-container">
                 <div className="reset-pass-left">
-                     <img src={loginImg} alt="" />
+                     <img src={Logo} alt="" />
                 </div>
                 <div className="reset-pass-right">
                 <div className="back-arrow">

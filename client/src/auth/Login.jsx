@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import './login.css';
 import loginImg from '../assets/loginImg.png'
+import Logo from '../assets/ollatoLogo.png'
 import {Icon} from 'react-icons-kit';
 import {eyeOff} from 'react-icons-kit/feather/eyeOff';
 import {eye} from 'react-icons-kit/feather/eye'
@@ -44,7 +45,7 @@ const Login = () => {
         <section className="login-wrapper">
             <div className="login-container">
                    <div className="login-left">
-                    <img src={loginImg} alt="" />
+                    <img src={Logo} alt="" />
                    </div>
                    <div className="login-right">
                       <div className="login-right-top">
@@ -110,7 +111,7 @@ const Login = () => {
          </div>
 
          <div className="createAccount">
-            <p> Don't have account yet? <Link to="#" style={{ textDecoration: 'none' }}> <strong>Create an account</strong></Link></p>
+            <p> Don't have account yet? <Link to="#" style={{ textDecoration: 'none', color:'#B75B2E' }}> <strong>Create an account</strong></Link></p>
          </div>
          </div>    
          
