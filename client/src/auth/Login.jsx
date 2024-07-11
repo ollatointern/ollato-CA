@@ -83,7 +83,7 @@ const Login = () => {
               </label>
               <div className="forget-pass">
                 <p>
-                    <Link  to="/forgetPass" style={{ textDecoration: 'none' }}> Forget password?</Link>
+                    <Link  to="/ForgotPassword" style={{ textDecoration: 'none' }}> Forget password?</Link>
                 </p>
             </div>
 
@@ -110,7 +110,7 @@ const Login = () => {
          </div>
 
          <div className="createAccount">
-            <p>Don't have account yet? <Link to="#" style={{ textDecoration: 'none' }}> <strong>Create an account</strong></Link></p>
+            <p> Don't have account yet? <Link to="#" style={{ textDecoration: 'none' }}> <strong>Create an account</strong></Link></p>
          </div>
          </div>    
          
