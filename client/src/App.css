@@ -1,5 +1,26 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
 .app-container{
+ display: flex;
+ height: 100%;
+ justify-content: flex-start;
+ scrollbar-width: none;
+}
+.app-container .sidebar{
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 300px;
+}
+.main-content{
+    margin-left: 300px;
+    width: calc(100% -300px);
     display: flex;
-    align-items: start;
-    width: 1440px;
+    flex-direction: column;
+    height: 100%;
+    over
 }

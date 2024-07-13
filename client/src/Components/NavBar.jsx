@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
-
+import {bell} from 'react-icons-kit/fa/bell';
+import Icon from 'react-icons-kit';
 const NavBar = () => {
   return (
     <>
@@ -13,10 +14,10 @@ const NavBar = () => {
             />
            <div className='nav-right'>
            <div className="notifi">
-                Notification
+           <Icon icon={bell} size={32} style={{ color: 'white' }} /> 
             </div>
             <div className="user-profile">
-                 user
+                 userName
                  <div className="pro-pic">
 
                  </div>

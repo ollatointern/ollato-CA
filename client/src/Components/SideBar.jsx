@@ -20,7 +20,7 @@ const [activeLink, setActiveLink]  = useState('Dashboard');
             <div className="sideBar-links">
                 <ul>
                    <li id={activeLink === 'Dashboard' ? 'active': '' }>
-                    <Link className='customLink' to='./Dashboard' onClick={()=>handelSelectActive('Dashboard')}>
+                    <Link className='customLink' to='/' onClick={()=>handelSelectActive('Dashboard')}>
                       Dashboard
                     </Link>
                    </li>
@@ -51,14 +51,14 @@ const [activeLink, setActiveLink]  = useState('Dashboard');
                    </li>
                 </ul>
             </div>
-           
-        </div>
-        <div className="logoutBtn">
+            <div className="logoutBtn">
               <button className="logout-btn">
                 LOGOUT
               </button>
             </div>
        </div> 
+        </div>
+       
     </>
   )
 }
