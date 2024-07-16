@@ -3,6 +3,7 @@
     width: 1300px;
     height: 64px;
     background: #e49c45;
+    z-index: 10000;
 
 }
 .nav-content{

@@ -1,42 +1,294 @@
-import React from 'react'
+// import React from 'react'
 import './dashboard.css'
+import { Link } from 'react-router-dom'
+// import { IoPieChart } from "react-icons/io5";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import { IconButton} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+// --------PieChart--------
+import *  as React from 'react';
+import { PieChart } from '@mui/x-charts/PieChart';
+import { useState } from 'react';
+import { BiSupport } from "react-icons/bi";
+import { FaQuestion } from "react-icons/fa";
+import { CiCircleInfo } from "react-icons/ci";
 const Dashboard = () => {
   return (
   <>
     <section className="d-wrapper">
         <div className="d-container">
-            <div className="block-1">
-            <div className="w-msg">
-              <h1>Wellcome to ollato!!</h1>
-            </div>
-            </div>
-            <div className="block-2">
-            <div className="recent-tab">
-              <h1>Recent Tab</h1>
-            </div>
-            <div className="quick-links">
-              <h1>Quick links</h1>
-            </div>
-            <div className="p-tracker">
-              <h1>Progress Tracker Graph</h1>
-            </div>
-            </div>
-            <div className="block-3">
-            <div className="upcoming-events">
-                <h1>Upcomnig Events</h1>
-             </div>
-             <div className="upcoming-events">
-                <h1>Upcomnig Events</h1>
-             </div>
-            </div>
+         <div className="block-1">
+        <div className="block-1-left"> 
+        <div className="recentActivities">
+         <RecentActivities />
+         </div>
+         <div className="PT">
+          <ProgressTracker/>
+          <div style={{
+            border:'1px solid black',
+            marginTop:'20px',
+            padding:'10px',
+            textAlign:'center',
+            height:'300px'
+          }}>
+            Achivements and Badges
+          </div>
+          </div>
+          <div className="support-help" 
+          style={{
+            width:'800px',
+            border:'1px solid pink',
+            margin:'10px',
+            padding:'10px',
+            display:'felx',
+            alignItems:'center'
+          }}
+          >
+          <div className="supportHelp" style={{
+            border:'1px solid blue',
+            padding:'10px',
+            display:'flex',
+            alignItems:'center',
+            gap:'50px'
+          }}>
+            <span 
+            style={{
+              padding:'10px',
+              border:'1px solid red',
+              display:'flex',
+              flexDirection:'column',
+              alignItems:'center',
+              gap:'10px',
+              width:'200px'
+            }}
+            > <span><BiSupport  size={32} /></span>Support & Help </span>
+          <div className="FAQ">
+            <span
+               style={{
+              padding:'10px',
+              border:'1px solid red',
+              display:'flex',
+              flexDirection:'column',
+              alignItems:'center',
+              gap:'10px',
+              width:'200px'
+            }}><span><FaQuestion size={32} /></span> FAQ</span>
+          </div>
+          <div className="userGuide">
+            <span
+               style={{
+              padding:'10px',
+              border:'1px solid red',
+              display:'flex',
+              flexDirection:'column',
+              alignItems:'center',
+              gap:'10px',
+              width:'200px'
+            }}
+            >
+            <span><CiCircleInfo size={32} /></span>
+            User Guide
+            </span>
+          </div>
+          </div>
+          </div>
+         </div>
+         <div className="block-1-right">
+         <div className='quickLinks' style={{
+          width:'400px',
+         }}>
+          <QuickLinks />
+        </div>
+          <div className="notifi">
+            <Notifications/>
+          </div>
+        <div className="upcomingEvents">
+          <UpcomingEvent />
+        </div>
+         </div>
+         </div>
+         <div className="block-2">
         
+         </div>
         </div>
     </section>
   </>
   )
 }
 
-export default Dashboard
+export default Dashboard;
+
+const RecentActivities =() =>{
+
+  const activities = [
+    { id: 1, title: 'Activity 1', description: 'Description for activity 1', imageUrl: 'https://via.placeholder.com/150' },
+    { id: 2, title: 'Activity 2', description: 'Description for activity 2', imageUrl: 'https://via.placeholder.com/150' },
+    { id: 3, title: 'Activity 3', description: 'Description for activity 3', imageUrl: 'https://via.placeholder.com/150' },
+    // Add more activities as needed
+];
+return (
+  <div className="recent-activities">
+      
+      <div style={{
+        width:'100%',
+        height:'250px'
+      }}>
+      <Carousel
+         showArrows={true}
+                autoPlay={true}
+                infiniteLoop={true}
+                showThumbs={true}
+                showStatus={false}
+                interval={3000}
+                transitionTime={500}
+               
+               
+      >
+          {activities.map(activity => (
+              <div key={activity.id}>
+              
+                  {/* <img src={activity.imageUrl} alt={activity.title} /> */}
+                  <div style={{
+                  height:250 +"px", 
+                  width:100 +"%",
+                  // background:"red",
+                  border: "1px solid blue"}}>
+                    <h1>
+                      Recent activity carousel
+                    </h1>
+                  </div>
+                  {/* <div className="legend" style={{
+                    width:90 + "%",
+                    background:"pink",
+                  }}>
+                      <h3>{activity.title}</h3>
+                      <p>{activity.description}</p>
+                  </div> */}
+              </div>
+          ))}
+      </Carousel>
+      </div>
+  </div>
+);
+};
+
+const QuickLinks =() =>{
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(4),
+    textAlign: 'start',
+    color: theme.palette.text.secondary,
+  }));
+  return(
+    <>
+    <Box sx={{ width: '100%' }}>
+      <Stack spacing={2}>
+      <h2>Quick Links</h2>
+        <Item><Link>Start New Assessment</Link></Item>
+        <Item>view Summery Report</Item>
+        <Item>Book a Session</Item>
+      </Stack>
+    </Box>
+    </>
+  )
+};
+
+const ProgressTracker=()=>{
+  return(
+    <>
+    <h1>Progress Tracker</h1>
+         <PieChart
+      series={[
+        {
+          data: [
+            { id: 0, value: 50, color:'green', label: 'Assessments Completed' },
+            { id: 1, value: 20, label: 'Traning Modules' },
+            // { id: 2, value: 20, label: 'Achivements' },
+          ],
+ 
+        },
+      ]}
+   
+      width={600}
+      height={200}
+    />
+    </>
+  )
+}
+const UpcomingEvent=()=>{
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(4),
+    textAlign: 'start',
+    color: theme.palette.text.secondary,
+  }));
+  return(
+    <>
+       <Box sx={{ width: '100%' }}>
+      <Stack spacing={2}>
+      <h2>Upcoming Events</h2>
+        <Item><Link>Start New Assessment</Link></Item>
+        <Item>view Summery Report</Item>
+        <Item>Book a Session</Item>
+      </Stack>
+    </Box>
+    </>
+  )
+};
+
+const Notifications =()=>{
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(4),
+    textAlign: 'start',
+    color: theme.palette.text.secondary,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+}));
+const [notifications, setNotifications] = useState([
+  { id: 1, type: 'session', message: 'Upcoming Session: React Basics' },
+  { id: 2, type: 'training', message: 'Upcoming Training: Advanced React' },
+  { id: 3, type: 'deadline', message: 'Important Deadline: Project Submission' },
+  { id: 4, type: 'session', message: 'Upcoming Session: Redux Workshop' },
+  { id: 5, type: 'training', message: 'Upcoming Training: JavaScript Deep Dive' },
+  { id: 6, type: 'deadline', message: 'Important Deadline: Team Meeting' },
+  { id: 7, type: 'session', message: 'Upcoming Session: TypeScript Essentials' },
+  { id: 8, type: 'training', message: 'Upcoming Training: GraphQL' },
+  { id: 9, type: 'deadline', message: 'Important Deadline: Code Review' },
+]);
+const handleDelete = (id) => {
+  setNotifications(notifications.filter(notification => notification.id !== id));
+};
+  return(
+    <>
+              <Box sx={{ width: '100%' }}>
+            <Stack spacing={2}>
+                <h2>Notification Center</h2>
+                {notifications.map(notification => (
+                    <Item key={notification.id}>
+                        <Link>{notification.message}</Link>
+                        <IconButton
+                            aria-label="delete"
+                            onClick={() => handleDelete(notification.id)}
+                        >
+                            <DeleteIcon />
+                        </IconButton>
+                    </Item>
+                ))}
+            </Stack>
+        </Box>
+    </>
+  )
+}
 
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
