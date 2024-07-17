@@ -1,9 +1,11 @@
 .Navbar-container{
     position: fixed;
     width: 1300px;
-    height: 64px;
+    height: 80px;
     background: #e49c45;
     z-index: 10000;
+    /* margin-top: 12px; */
+   padding-left: 24px;
 
 }
 .nav-content{
@@ -15,25 +17,45 @@
     justify-content: space-between;
 }
 .nav-content input{
-    padding: 10px;
+    padding: 14px;
     width: 540px;
     border: none;
     outline: none;
     border-radius: 12px;
+    border-radius: 3px;
+    background:#fff;
+    box-shadow:     1px 1px 4px #5b5b5b,
+             -1px -1px 4px #e8e8e8;
 }
 .nav-right{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+    width: 150px;
+    margin-right: 30px;
+   
+    /* border: 1px solid red; */
 }
 .nav-right .user-profile{
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-.nav-right  .user-profile .pro-pic{
-    height: 50px;
-    width: 50px;
+    gap: 10px;
+    /* border: 1px solid blue; */
+    padding: 6px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #fff;
+    box-shadow:     1px 1px 4px #5b5b5b,
+             -1px -1px 4px #e8e8e8;
+    border-radius: 10px;         
+}
+.pro-pic{
+    background-color: #fff;
+    background: blue;
     border-radius: 50%;
+    /* border: 1px solid black; */
 }

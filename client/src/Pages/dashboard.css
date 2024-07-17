@@ -4,7 +4,7 @@
     padding: 10px;
     height: 100%;
     overflow-y: auto;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
 }
 .d-container{
     width: 100%;
@@ -23,33 +23,44 @@
     flex-basis: 2;
     display: flex;
     flex-direction: column;
-}
+}   
 .d-container .block-1{
     width: 100%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     align-items: start;
     /* justify-content:space-around; */
 }
 .block-1 .recentActivities{
-    border: 2px solid blue;
-    background: #ffcb8f;
-    border-radius: 12px;
-    box-shadow: 2px 4px 12px grey;
+    /* #E49C45 */
+    /* border: 2px solid blue; */
+    /* background: #ffcb8f; */
+    border-radius: 10px;
+    background: #ffffff;
+box-shadow:  3px 3px 5px #ececec,
+             -3px -3px 5px #eeeeee;
     margin: 10px;
     padding: 10px;
     width: 800px;
 }
 .block-1 .quickLinks{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     padding: 10px;
     margin: 10px;
+    border-radius: 10px;
+    border-radius: 5px;
+background: #ffffff;
+box-shadow:  3px 3px 5px #ececec,
+             -3px -3px 5px #eeeeee;
 }
 .block-1-right .upcomingEvents,
 .block-1-right .notifi{
-    border: 2px solid blue;
-    padding: 10px;
+    /* border: 2px solid blue; */
+    padding: 12px;
     margin: 10px;
+    background: #ffffff;
+box-shadow:  3px 3px 5px #ececec,
+             -3px -3px 5px #eeeeee;
 }
 .block-1-right .notifi{
     height: 400px;
@@ -58,20 +69,27 @@
 }
 .d-container .block-2{
     width: 100%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin-top: 20px;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: #ffffff;
+    box-shadow:  3px 3px 5px #ececec,
+                 -3px -3px 5px #eeeeee;
 }
 .block-1-left .PT{
     margin-top: 25px;
     margin: 10px;
     padding: 10px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
+    background: #ffffff;
+    box-shadow:  3px 3px 5px #ececec,
+                 -3px -3px 5px #eeeeee;
 }
 .block-2 .recent-tab{
     /* border: 1px solid red; */

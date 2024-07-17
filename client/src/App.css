@@ -26,10 +26,10 @@ body, html{
 }
 .content{
     
-    margin-top: 60px;
+    margin-top: 80px;
     width: 80vw;
     min-height: 100vh;
-    background: lightcyan;
+    background: #fff;
     padding: 10px;
     overflow-y: auto;
 }

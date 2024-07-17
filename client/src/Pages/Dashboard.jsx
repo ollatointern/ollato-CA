@@ -42,7 +42,7 @@ const Dashboard = () => {
           <div className="support-help" 
           style={{
             width:'800px',
-            border:'1px solid pink',
+            // border:'1px solid pink',
             margin:'10px',
             padding:'10px',
             display:'felx',
@@ -50,7 +50,7 @@ const Dashboard = () => {
           }}
           >
           <div className="supportHelp" style={{
-            border:'1px solid blue',
+            // border:'1px solid blue',
             padding:'10px',
             display:'flex',
             alignItems:'center',
@@ -59,36 +59,49 @@ const Dashboard = () => {
             <span 
             style={{
               padding:'10px',
-              border:'1px solid red',
+              // border:'1px solid red',
               display:'flex',
               flexDirection:'column',
               alignItems:'center',
               gap:'10px',
-              width:'200px'
+              width:'150px',
+              height:'100px',
+              borderRadius: '23px',
+background:'#e0e0e0' ,
+boxShadow: 'inset 6px 6px 8px #cccccc , inset -6px -6px 8px #f4f4f4'
             }}
             > <span><BiSupport  size={32} /></span>Support & Help </span>
           <div className="FAQ">
             <span
                style={{
               padding:'10px',
-              border:'1px solid red',
+              // border:'1px solid red',
               display:'flex',
               flexDirection:'column',
               alignItems:'center',
               gap:'10px',
-              width:'200px'
+              width:'150px',
+              height:'100px',
+              borderRadius: '23px',
+background:'#e0e0e0' ,
+boxShadow: 'inset 6px 6px 8px #cccccc , inset -6px -6px 8px #f4f4f4'
             }}><span><FaQuestion size={32} /></span> FAQ</span>
           </div>
           <div className="userGuide">
             <span
                style={{
               padding:'10px',
-              border:'1px solid red',
+              // border:'1px solid red',
               display:'flex',
               flexDirection:'column',
               alignItems:'center',
               gap:'10px',
-              width:'200px'
+              width:'150px',
+              height:'100px',
+              borderRadius: '23px',
+background:'#e0e0e0' ,
+boxShadow: 'inset 6px 6px 8px #cccccc , inset -6px -6px 8px #f4f4f4'
+            
             }}
             >
             <span><CiCircleInfo size={32} /></span>
@@ -123,6 +136,19 @@ const Dashboard = () => {
 
 export default Dashboard;
 
+import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
+import 'swiper/css'
+
+
+const RecentSwiper=()=>{
+
+  return(
+    <>
+      
+    </>
+  )
+}
+
 const RecentActivities =() =>{
 
   const activities = [
@@ -156,11 +182,41 @@ return (
                   <div style={{
                   height:250 +"px", 
                   width:100 +"%",
+                  padding:'10px',
                   // background:"red",
-                  border: "1px solid blue"}}>
+                  border: "1px solid blue",
+                  position:'relative'
+                  
+                  }}>
                     <h1>
-                      Recent activity carousel
+                     {activity.title}
                     </h1>
+                    <p>
+                      {activity.description}
+                    </p>
+                    <div style={{
+                      width:'300px',
+                      height:'150px',
+                      background:'pink',
+                      display:'flex',
+                      flexDirection:'column'
+                    }}> 
+                    
+                    </div>
+                    <button style={{
+                        width:'100px',
+                        padding:'10px',
+                        border:'none',
+                        outline:'none',
+                        borderRadius:'12px',
+                        background:'blue',
+                        color:'white',
+                        position:'absolute',
+                        right:'20px',
+                        bottom:'20px'
+                       }}> 
+                        Continue
+                       </button>
                   </div>
                   {/* <div className="legend" style={{
                     width:90 + "%",
@@ -179,18 +235,26 @@ return (
 
 const QuickLinks =() =>{
   const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#3FA2F6',
     ...theme.typography.body2,
-    padding: theme.spacing(4),
+    padding: theme.spacing(2),
     textAlign: 'start',
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
+    transition:'background-color 0.3s ease',
+    '&:hover': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#303B47' : '#5CBAF9', // Change this to your desired hover color
+    },
   }));
   return(
     <>
     <Box sx={{ width: '100%' }}>
       <Stack spacing={2}>
       <h2>Quick Links</h2>
-        <Item><Link>Start New Assessment</Link></Item>
+        <Item><Link 
+         style={{
+          textDecoration:'none',
+          color:'white'
+         }}>Start New Assessment</Link></Item>
         <Item>view Summery Report</Item>
         <Item>Book a Session</Item>
       </Stack>
@@ -223,11 +287,16 @@ const ProgressTracker=()=>{
 }
 const UpcomingEvent=()=>{
   const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#ECB176',
     ...theme.typography.body2,
-    padding: theme.spacing(4),
+    padding: theme.spacing(3),
     textAlign: 'start',
     color: theme.palette.text.secondary,
+    cursor:'pointer',
+    transition:'background-color 0.3s ease',
+    '&:hover': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#303B47' : '#FED8B1', // Change this to your desired hover color
+    },
   }));
   return(
     <>
@@ -247,7 +316,7 @@ const Notifications =()=>{
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
-    padding: theme.spacing(4),
+    padding: theme.spacing(1),
     textAlign: 'start',
     color: theme.palette.text.secondary,
     display: 'flex',
@@ -271,7 +340,7 @@ const handleDelete = (id) => {
   return(
     <>
               <Box sx={{ width: '100%' }}>
-            <Stack spacing={2}>
+            <Stack spacing={1}>
                 <h2>Notification Center</h2>
                 {notifications.map(notification => (
                     <Item key={notification.id}>

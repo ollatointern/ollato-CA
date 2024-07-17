@@ -12,15 +12,17 @@ const NavBar = () => {
            placeholder="Search..."
       
             />
-           <div className='nav-rightSUJI'>
-           <div className="notifi">
+           <div className='nav-right'>
+           {/* <div className="notifi">
            <Icon icon={bell} size={32} style={{ color: 'white' }} /> 
-            </div>
+            </div> */}
             <div className="user-profile">
+              <span className='pro-pic' style={{
+                height:'40px',
+                width:'40px',
+              }}></span>
                  userName
-                 <div className="pro-pic">
-
-                 </div>
+                
             </div>
             </div>
            </div>

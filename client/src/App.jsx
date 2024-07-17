@@ -14,6 +14,7 @@ import Session from './Pages/Session';
 import Traning from './Pages/Traning';
 import Reports from './Pages/Reports';
 import NavBar from './Components/NavBar';
+import PackageHistory from './Pages/PackageHistory';
 function App() {
 
 
@@ -24,11 +25,12 @@ function App() {
     <SideBar/>
     </div>
       <div className="main-content">
-      <NavBar />
+      <NavBar/>
      <div className="content">
      <Routes>
        <Route path='/' element={<Dashboard/>}/>
        <Route path='/Package' element={<Package/>}/>
+       <Route path='/PackageHistory' element={<PackageHistory/>}/>
        <Route path='/Assesment' element={<Assesment/>}/>
        <Route path='/Session' element={<Session/>}/>
        <Route path='/Traning' element={<Traning/>}/>
