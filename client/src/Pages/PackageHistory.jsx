@@ -49,6 +49,12 @@ const packageData = [
         purchaseDate: '01 Jan 2020 18:00 AM',
         status: 'Expired',
       },
+    {
+        id: '08',
+        name: 'Online sujit, Report Generation, Virtual Counselling',
+        purchaseDate: '01 Jan 2020 18:00 AM',
+        status: 'Expired',
+      },
   ];
 const PackageHistory = () => {
     const [packages, setPackages] = useState([]);
