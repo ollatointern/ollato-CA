@@ -15,6 +15,9 @@ import Traning from './Pages/Traning';
 import Reports from './Pages/Reports';
 import NavBar from './Components/NavBar';
 import PackageHistory from './Pages/PackageHistory';
+import Counselling from './Pages/Counselling';
+import CounsellorDetails from './Pages/CounsellorDetails';
+import SessionHistory from './Pages/SessionHistory';
 function App() {
 
 
@@ -35,6 +38,9 @@ function App() {
        <Route path='/Session' element={<Session/>}/>
        <Route path='/Traning' element={<Traning/>}/>
        <Route path='/Reports' element={<Reports/>}/>
+       <Route path='/Counselling' element={ <Counselling />}/>
+       <Route path='/Counsellor/:id' element={<CounsellorDetails />}/>
+       <Route path='/SessionHistory' element={<SessionHistory />}/>
        </Routes>
      </div>
       </div>

@@ -49,6 +49,11 @@ const [activeLink, setActiveLink]  = useState('Dashboard');
                       Traning
                     </Link>
                    </li>
+                   <li id={activeLink === 'Counselling' ? 'active': '' }>
+                    <Link className='customLink' to='./Counselling' onClick={()=>handelSelectActive('Counselling')}>
+                      Counselling
+                    </Link>
+                   </li>
                 </ul>
             </div>
             <div className="logoutBtn">
