@@ -2,16 +2,25 @@ import './App.css'
 import Login from './auth/Login'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from './auth/Register';
-import Dashboard from './Pages/dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard';
+import NavBar from './Components/NavBar';
+import SideBar from './Components/SideBar';
+import Package from './Pages/Package';
+import Assesment from './Pages/Assesment';
+import Session from './Pages/Session';
+import Traning from './Pages/Traning';
+import Reports from './Pages/Reports';
+
+
 function App() {
 return (
     <BrowserRouter>
-      <Routes>
+    <div className="app-container">
+    {/* <Routes>
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path = "/Login" element={<Login />} />
         <Route path = "/Register" element={<Register/>}/>
-      </Routes>
-    <div className="app-container">
+      </Routes> */}
     <div className="sidebar">
     <SideBar/>
     </div>
