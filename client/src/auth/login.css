@@ -1,33 +1,34 @@
 .login-wrapper{
     padding: 10px;
     width: 100%;
-    background: #EEF6FC;
+    background: #fff;
 }
 .login-container{
     display: flex;
     
     align-items:center;
     justify-content: flex-start;
-    border: 1px solid red;
+ 
     gap: 100px;
 }
 .login-left{
-    border: 2px solid black;
-   /* flex-basis:500px; */
+   padding: 10px; 
+   background: #EDE6E2;
    height: 100%;
    width: 50%;
 }
 .login-left img{
-    width:100%;
-    height: 100%;
+    
+    width:95%;
+    height: 90%;
 }
 .login-right{
-    border: 2px solid pink;
+
     flex-basis: 2;
 }
 
 .loginHead{
-    color: #0D2D44;
+    color: #B75B2E;
     font-size: 48px;
     font-weight: bold;
     font-family: "Inter", sans-serif;
@@ -63,7 +64,7 @@
     border: none;
     border-radius: 16px;
     padding: 20px 16px;
-    
+    background: #EDE6E2;
 }
 
 .input-fields{
@@ -73,7 +74,7 @@
 }
 .eyeIcon {
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 70%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -113,7 +114,7 @@ margin-top: 30px;
 
 font-size: 18px;
 font-weight:400 ;
-color: #2170AC;
+color: #B75B2E;
 
 }
 

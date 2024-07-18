@@ -11,6 +11,24 @@ return (
         <Route path = "/Login" element={<Login />} />
         <Route path = "/Register" element={<Register/>}/>
       </Routes>
+    <div className="app-container">
+    <div className="sidebar">
+    <SideBar/>
+    </div>
+      <div className="main-content">
+      <NavBar />
+     <div className="content">
+     <Routes>
+       <Route path='/' element={<Dashboard/>}/>
+       <Route path='/Package' element={<Package/>}/>
+       <Route path='/Assesment' element={<Assesment/>}/>
+       <Route path='/Session' element={<Session/>}/>
+       <Route path='/Traning' element={<Traning/>}/>
+       <Route path='/Reports' element={<Reports/>}/>
+       </Routes>
+     </div>
+      </div>
+    </div>
     </BrowserRouter>
   )
 }
