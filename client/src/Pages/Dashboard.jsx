@@ -136,18 +136,10 @@ boxShadow: 'inset 6px 6px 8px #cccccc , inset -6px -6px 8px #f4f4f4'
 
 export default Dashboard;
 
-import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
-import 'swiper/css'
+ 
 
 
-const RecentSwiper=()=>{
 
-  return(
-    <>
-      
-    </>
-  )
-}
 
 const RecentActivities =() =>{
 
