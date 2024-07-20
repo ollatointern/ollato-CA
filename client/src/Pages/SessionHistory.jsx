@@ -16,70 +16,18 @@ import {
   Avatar,
   Box
 } from '@mui/material';
-const sessionsData = [
-    {
-      id: 1,
-      studentName: 'Samanta William',
-      studentEmail: 'samanta@mail.com',
-      counsellorName: 'John Matrin',
-      counsellorEmail: 'john@mail.com',
-      date: '01 Feb 2022',
-      time: '10:00 AM',
-      status: 'Pending'
-    },
-    {
-        id: 1,
-        studentName: 'Samanta William',
-        studentEmail: 'samanta@mail.com',
-        counsellorName: 'John Matrin',
-        counsellorEmail: 'john@mail.com',
-        date: '01 Feb 2022',
-        time: '10:00 AM',
-        status: 'Pending'
-      },
-      {
-        id: 1,
-        studentName: 'Samanta William',
-        studentEmail: 'samanta@mail.com',
-        counsellorName: 'John Matrin',
-        counsellorEmail: 'john@mail.com',
-        date: '01 Feb 2022',
-        time: '10:00 AM',
-        status: 'Pending'
-      },
-      {
-        id: 1,
-        studentName: 'Samanta William',
-        studentEmail: 'samanta@mail.com',
-        counsellorName: 'John Matrin',
-        counsellorEmail: 'john@mail.com',
-        date: '01 Feb 2022',
-        time: '10:00 AM',
-        status: 'Pending'
-      },
-      {
-        id: 1,
-        studentName: 'Samanta William',
-        studentEmail: 'samanta@mail.com',
-        counsellorName: 'John Matrin',
-        counsellorEmail: 'john@mail.com',
-        date: '01 Feb 2022',
-        time: '10:00 AM',
-        status: 'Pending'
-      },
-      {
-        id: 1,
-        studentName: 'Samanta William',
-        studentEmail: 'samanta@mail.com',
-        counsellorName: 'John Matrin',
-        counsellorEmail: 'john@mail.com',
-        date: '01 Feb 2022',
-        time: '10:00 AM',
-        status: 'Pending'
-      },
-    // Add more sessions here
-  ];
-
+import { Link } from 'react-router-dom';
+import CounsellorImage from '../assets/counsellor.jpg';
+// import { sessionsData } from './SessionHistory';
+export const sessionsData = [
+  { id: 1, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Pending', counsellorImage: CounsellorImage },
+  { id: 2, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Upcoming', counsellorImage: CounsellorImage },
+  { id: 3, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Pending', counsellorImage: CounsellorImage },
+  { id: 4, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Pending', counsellorImage: CounsellorImage },
+  { id: 5, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Pending', counsellorImage: CounsellorImage },
+  { id: 6, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Pending', counsellorImage: CounsellorImage }
+  // Add more sessions here
+];
 const SessionHistory = () => {
     const [tabValue, setTabValue] = useState(0);
     const [sessions, setSessions] = useState([]);
@@ -93,7 +41,7 @@ const SessionHistory = () => {
       setTabValue(newValue);
     };
   
-    const renderActions = (status) => (
+    const renderActions = (status, id) => (
       <div style={{
         display:'flex',
         flexDirection:'column',
@@ -105,15 +53,24 @@ const SessionHistory = () => {
             <Button variant="contained" color="primary" size="small" style={{}}>
               Reschedule
             </Button>
-            <Button variant="contained" color="secondary" size="small" style={{
+    
+          <Link to={`/cancel-session/${id}`}>
+          <Button variant="contained" color="secondary" size="small" style={{
                 width:'150px'
             }}>
               Cancel
             </Button>
+          </Link>
           </>
         )}
       </div>
     );
+
+    const filterSessions = (status) => {
+      if (status === 0) return sessions; // All
+      const statuses = ['Pending', 'Upcoming', 'Completed', 'Canceled', 'Rescheduled'];
+      return sessions.filter(session => session.status === statuses[status - 1]);
+    };
   return (
  <>
 <Container>
@@ -140,8 +97,8 @@ const SessionHistory = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {sessions
-              .filter(session => tabValue === 0 || session.status === tabValue)
+            {filterSessions(tabValue)
+             
               .map((session, index) => (
                 <TableRow key={session.id}>
                   <TableCell>{index + 1}</TableCell>
@@ -157,7 +114,7 @@ const SessionHistory = () => {
                   </TableCell>
                   <TableCell>
                     <Box display="flex" alignItems="center">
-                      <Avatar alt={session.counsellorName} src="/static/images/avatar/2.jpg" style={{ marginRight: 8 }} />
+                      <Avatar alt={session.counsellorName} src={CounsellorImage} style={{ marginRight: 8 }} />
                       <div>
                         {session.counsellorName}
                         <br />
@@ -168,7 +125,7 @@ const SessionHistory = () => {
                   <TableCell>
                     {session.date} <br /> {session.time}
                   </TableCell>
-                  <TableCell>{renderActions(session.status)}</TableCell>
+                  <TableCell>{renderActions(session.status, session.id)}</TableCell>
                 </TableRow>
               ))}
           </TableBody>
