@@ -18,6 +18,7 @@ import PackageHistory from './Pages/PackageHistory';
 import Counselling from './Pages/Counselling';
 import CounsellorDetails from './Pages/CounsellorDetails';
 import SessionHistory from './Pages/SessionHistory';
+import Profile from './Pages/Profile';
 function App() {
 
 
@@ -41,6 +42,7 @@ function App() {
        <Route path='/Counselling' element={ <Counselling />}/>
        <Route path='/Counsellor/:id' element={<CounsellorDetails />}/>
        <Route path='/SessionHistory' element={<SessionHistory />}/>
+       <Route path='/Profile' element={<Profile/>}/>
        </Routes>
      </div>
       </div>

@@ -46,7 +46,7 @@ const [activeLink, setActiveLink]  = useState('Dashboard');
                    </li>
                    <li id={activeLink === 'Traning' ? 'active': '' }>
                     <Link className='customLink' to='./Traning' onClick={()=>handelSelectActive('Traning')}>
-                      Traning
+                      Training
                     </Link>
                    </li>
                    <li id={activeLink === 'Counselling' ? 'active': '' }>

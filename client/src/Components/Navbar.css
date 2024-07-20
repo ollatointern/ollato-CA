@@ -59,3 +59,10 @@
     border-radius: 50%;
     /* border: 1px solid black; */
 }
+
+.custom-link{
+    text-decoration: none;
+    /* font-size: 18px; */
+    font-weight: 600;
+    /* color: #FFF; */
+}
