@@ -2,7 +2,7 @@ body, html{
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 .app-container{
  display: flex;
@@ -22,4 +22,19 @@ body, html{
     display: flex;
     flex-direction: column;
     height: 100%;
+<<<<<<< HEAD
 }
+=======
+    
+}
+.content{
+    
+    margin-top: 80px;
+    width: 80vw;
+    min-height: 100vh;
+    background: #fff;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+>>>>>>> sp

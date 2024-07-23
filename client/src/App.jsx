@@ -10,8 +10,19 @@ import Assesment from './Pages/Assesment';
 import Session from './Pages/Session';
 import Traning from './Pages/Traning';
 import Reports from './Pages/Reports';
+<<<<<<< HEAD
 
 
+=======
+import NavBar from './Components/NavBar';
+import PackageHistory from './Pages/PackageHistory';
+import Counselling from './Pages/Counselling';
+import CounsellorDetails from './Pages/CounsellorDetails';
+import SessionHistory from './Pages/SessionHistory';
+import SessionCancelation from './Pages/SessionCancelation';
+import UserProfile from './Pages/UserProfile';
+// import Profile  from './Pages/Profile';
+>>>>>>> sp
 function App() {
 return (
     <BrowserRouter>
@@ -25,15 +36,21 @@ return (
     <SideBar/>
     </div>
       <div className="main-content">
-      <NavBar />
+      <NavBar/>
      <div className="content">
      <Routes>
        <Route path='/' element={<Dashboard/>}/>
        <Route path='/Package' element={<Package/>}/>
+       <Route path='/PackageHistory' element={<PackageHistory/>}/>
        <Route path='/Assesment' element={<Assesment/>}/>
        <Route path='/Session' element={<Session/>}/>
        <Route path='/Traning' element={<Traning/>}/>
        <Route path='/Reports' element={<Reports/>}/>
+       <Route path='/Counselling' element={ <Counselling />}/>
+       <Route path='/Counsellor/:id' element={<CounsellorDetails />}/>
+       <Route path='/SessionHistory' element={<SessionHistory />}/>
+       <Route path='/UserProfile' element={<UserProfile/>}/>
+       <Route path='/cancel-session/:id' element={<SessionCancelation/>}/>
        </Routes>
      </div>
       </div>
