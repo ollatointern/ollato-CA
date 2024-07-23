@@ -18,7 +18,11 @@ const NavBar = () => {
             {/* <div className="notifi">
            <Icon icon={bell} size={32} style={{ color: 'white' }} /> 
             </div> */}
-            <div className="user-profile">
+            <div className="user-profile" style={{
+              display:'flex',
+              alignItems:'center',
+              gap:'20px'
+            }}>
               <span className='pro-pic' style={{
                 height: '40px',
                 width: '40px',

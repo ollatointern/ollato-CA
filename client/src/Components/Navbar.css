@@ -37,14 +37,14 @@
    
     /* border: 1px solid red; */
 }
-.nav-right .user-profile{
+/* .nav-right .user-profile{
     display: flex;
     align-items: center;
     gap: 10px;
-    /* border: 1px solid blue; */
+   
     padding: 6px;
     width: 100%;
-    text-align: center;
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@
     box-shadow:     1px 1px 4px #5b5b5b,
              -1px -1px 4px #e8e8e8;
     border-radius: 10px;         
-}
+} */
 .pro-pic{
     background-color: #fff;
     background: blue;
