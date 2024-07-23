@@ -10,11 +10,7 @@ import Assesment from './Pages/Assesment';
 import Session from './Pages/Session';
 import Traning from './Pages/Traning';
 import Reports from './Pages/Reports';
-<<<<<<< HEAD
-
-
-=======
-import NavBar from './Components/NavBar';
+// import NavBar from './Components/NavBar';
 import PackageHistory from './Pages/PackageHistory';
 import Counselling from './Pages/Counselling';
 import CounsellorDetails from './Pages/CounsellorDetails';
@@ -22,7 +18,6 @@ import SessionHistory from './Pages/SessionHistory';
 import SessionCancelation from './Pages/SessionCancelation';
 import UserProfile from './Pages/UserProfile';
 // import Profile  from './Pages/Profile';
->>>>>>> sp
 function App() {
 return (
     <BrowserRouter>

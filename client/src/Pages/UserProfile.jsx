@@ -34,7 +34,7 @@ const Profile = () => {
                     <div className='profile-photo' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '50px' }}>
                         <Card sx={{ borderRadius: '20px', width: '300px' }}>
                             <CardMedia sx={{ height: 250 }}
-                                image="https://img.freepik.com/free-photo/young-woman-wearing-striped-shirt-eyeglasses_273609-13226.jpg" ></CardMedia>
+                                image="https://img.freepik.com/free-photo/young-woman-wearing-striped-shirt-eyeglasses_273609-13226.jpg"></CardMedia>
                         </Card>
                         <List sx={{ padding: '40px' }}>
                             <ListItem disablePadding>

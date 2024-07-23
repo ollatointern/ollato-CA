@@ -27,7 +27,7 @@ const NavBar = () => {
                 height: '40px',
                 width: '40px',
               }}>
-                <Link className='custom-link' to='./Profile'>userName</Link>
+                <Link className='custom-link' to='./UserProfile'>userName</Link>
               </span>
             </div>
           </div>
