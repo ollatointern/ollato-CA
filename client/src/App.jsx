@@ -19,6 +19,7 @@ import Counselling from './Pages/Counselling';
 import CounsellorDetails from './Pages/CounsellorDetails';
 import SessionHistory from './Pages/SessionHistory';
 import SessionCancelation from './Pages/SessionCancelation';
+import Profile  from './Pages/Profile';
 function App() {
 
 
