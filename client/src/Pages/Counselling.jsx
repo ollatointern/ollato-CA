@@ -155,120 +155,124 @@ const Counselling = () => {
           </Typography>
         </Box>
 
-        {/* filtering section  */}
+        {/* filtering section ***************************************************** */}
+        <Typography variant="h5" component="h3" style={{ border: '2px solid ' }}>
+          Filter</Typography>
 
-        <Box mb={2} mt={2} style={{
-          // border:'1px solid blue',
-          width: '100%'
-        }}>
-          <Typography variant="h5" component="h3" style={{ marginLeft: '10px', background: 'grey', alignItems: 'center' }}>
-            Filter</Typography>
+          <Box mb={2} mt={2} component="section" style={{
+            // border:'1px solid blue',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row'
+            // marginBottom: '115px'
+          }}>
 
-          {/* date select -------------------------------------- */}
+            {/* date select -------------------------------------- */}
 
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={['DatePicker']}>
-              <DatePicker label="Basic date picker" />
-            </DemoContainer>
-          </LocalizationProvider>
+            <LocalizationProvider dateAdapter={AdapterDayjs} >
+              <DemoContainer components={['DatePicker']}>
+                <DatePicker label="Basic date picker" />
+              </DemoContainer>
+            </LocalizationProvider>
 
-          {/* time select -------------------------------------- */}
+            {/* time select -------------------------------------- */}
 
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={['TimePicker']}>
-              <TimePicker label="Basic time picker" />
-            </DemoContainer>
-          </LocalizationProvider>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={['TimePicker']}>
+                <TimePicker label="Basic time picker" />
+              </DemoContainer>
+            </LocalizationProvider>
 
-          {/* expertise select----------------------------  */}
+            {/* expertise select----------------------------  */}
 
-          <FormControl fullWidth className='expertise-select'>
-            <InputLabel id="demo-simple-select-label">Expertise</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={expertise}
-              label="Expertise"
-              onChange={handleExpertise}
-            >
-              <MenuItem value={10}>Career Counsellor</MenuItem>
-              <MenuItem value={20}>Career Guidance</MenuItem>
-              <MenuItem value={30}>Subject Expertise</MenuItem>
-              <MenuItem value={40}>Mentor</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl fullWidth className='expertise-select'>
+              <InputLabel id="demo-simple-select-label">Expertise</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={expertise}
+                label="Expertise"
+                onChange={handleExpertise}
+              >
+                <MenuItem value={10}>Career Counsellor</MenuItem>
+                <MenuItem value={20}>Career Guidance</MenuItem>
+                <MenuItem value={30}>Subject Expertise</MenuItem>
+                <MenuItem value={40}>Mentor</MenuItem>
+              </Select>
+            </FormControl>
 
-          {/* mode select------------------------------- */}
+            {/* mode select------------------------------- */}
 
-          <FormControl fullWidth className='mode-select'>
-            <InputLabel id="demo-simple-select-label">Mode</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={mode}
-              label="Mode"
-              onChange={handleMode}
-            >
-              <MenuItem value={10}>Online Video Calling</MenuItem>
-              <MenuItem value={20}>Online Voice Calling</MenuItem>
-              <MenuItem value={30}>Online Chat</MenuItem>
-              <MenuItem value={40}>Offline In Person</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl fullWidth className='mode-select'>
+              <InputLabel id="demo-simple-select-label">Mode</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={mode}
+                label="Mode"
+                onChange={handleMode}
+              >
+                <MenuItem value={10}>Online Video Calling</MenuItem>
+                <MenuItem value={20}>Online Voice Calling</MenuItem>
+                <MenuItem value={30}>Online Chat</MenuItem>
+                <MenuItem value={40}>Offline In Person</MenuItem>
+              </Select>
+            </FormControl>
 
-          {/* duration select------------------------------- */}
+            {/* duration select------------------------------- */}
 
-          <FormControl fullWidth className='duration-select'>
-            <InputLabel id="demo-simple-select-label">Duration</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={duration}
-              label="duration"
-              onChange={handleDuration}
-            >
-              <MenuItem value={10}>30 minutes</MenuItem>
-              <MenuItem value={20}>60 minutes</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl fullWidth className='duration-select'>
+              <InputLabel id="demo-simple-select-label">Duration</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={duration}
+                label="duration"
+                onChange={handleDuration}
+              >
+                <MenuItem value={10}>30 minutes</MenuItem>
+                <MenuItem value={20}>60 minutes</MenuItem>
+              </Select>
+            </FormControl>
 
-          {/* language select------------------------------- */}
+            {/* language select------------------------------- */}
 
-          <FormControl fullWidth className='language-select'>
-            <InputLabel id="demo-simple-select-label">Language</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={language}
-              label="language"
-              onChange={handleLanguage}
-            >
-              <MenuItem value={10}>English</MenuItem>
-              <MenuItem value={20}>Hindi</MenuItem>
-              <MenuItem value={30}>Gujrati</MenuItem>
-              <MenuItem value={40}>Bengali</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl fullWidth className='language-select'>
+              <InputLabel id="demo-simple-select-label">Language</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={language}
+                label="language"
+                onChange={handleLanguage}
+              >
+                <MenuItem value={10}>English</MenuItem>
+                <MenuItem value={20}>Hindi</MenuItem>
+                <MenuItem value={30}>Gujrati</MenuItem>
+                <MenuItem value={40}>Bengali</MenuItem>
+              </Select>
+            </FormControl>
 
-          {/* location select------------------------------- */}
+            {/* location select------------------------------- */}
 
-          <FormControl fullWidth className='location-select'>
-            <InputLabel id="demo-simple-select-label">Location</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={location}
-              label="location"
-              onChange={handleLocation}
-            >
-              <MenuItem value={10}>Mumbai</MenuItem>
-              <MenuItem value={20}>Ahemdabad</MenuItem>
-              <MenuItem value={30}>Bengalore</MenuItem>
-              <MenuItem value={40}>Hyderabad</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl fullWidth className='location-select'>
+              <InputLabel id="demo-simple-select-label">Location</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={location}
+                label="location"
+                onChange={handleLocation}
+              >
+                <MenuItem value={10}>Mumbai</MenuItem>
+                <MenuItem value={20}>Ahemdabad</MenuItem>
+                <MenuItem value={30}>Bengalore</MenuItem>
+                <MenuItem value={40}>Hyderabad</MenuItem>
+              </Select>
+            </FormControl>
 
-        </Box>
+          </Box>
+        {/* filtering end********************************************* */}
 
         <Grid container spacing={1} className={styles.cardWrapper} style={{
           // border:'1px solid red',
