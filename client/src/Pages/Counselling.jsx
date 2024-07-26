@@ -1,12 +1,13 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { Grid, Card, CardMedia, CardContent, Typography, Button, Container, Box } from '@mui/material';
+import { Grid, Card, CardMedia, CardContent, Typography, Button, Container, Box, Stack, Avatar, IconButton } from '@mui/material';
 import styles from './pages.module.css';
 // import {useHistory} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import CounsellorImg from '../assets/counsellor.jpg'
 import { Link } from 'react-router-dom';
+import { Phone, VideoCall, Message, Home } from '@mui/icons-material';
 const Counselling = () => {
     const [counsellors, setCounsellors] = useState([]);
     // const history = useHistory();
@@ -23,7 +24,8 @@ const Counselling = () => {
               bookNowLink: "#",
               details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.    ",
               slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-              date: "05 March 2022"   
+              date: "05 March 2022",
+              languages: ['English', 'Hindi'],   
             },
             {
               id: 2,
@@ -33,7 +35,8 @@ const Counselling = () => {
               bookNowLink: "#",
               details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
               slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-              date: "05 March 2022"  
+              date: "05 March 2022",
+              languages: ['English', 'Hindi'],  
             },
             {
               id: 3,
@@ -43,7 +46,8 @@ const Counselling = () => {
               bookNowLink: "#",
               details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
               slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-              date: "05 March 2022"  
+              date: "05 March 2022",
+              languages: ['English', 'Hindi'],  
             },
             {
               id: 4,
@@ -53,7 +57,8 @@ const Counselling = () => {
               bookNowLink: "#",
               details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
               slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-              date: "05 March 2022"  
+              date: "05 March 2022",
+              languages: ['English', 'Hindi'],  
             },
             {
               id: 5,
@@ -63,7 +68,8 @@ const Counselling = () => {
               bookNowLink: "#",
               details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
               slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-              date: "05 March 2022"  
+              date: "05 March 2022",
+              languages: ['English', 'Hindi'],  
             },
             {
               id: 6,
@@ -73,7 +79,8 @@ const Counselling = () => {
               bookNowLink: "#",
               details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
               slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-              date: "05 March 2022"  
+              date: "05 March 2022",
+              languages: ['English', 'Hindi'],  
             }
           ];
           setCounsellors(data);
@@ -90,10 +97,10 @@ const Counselling = () => {
     <Container style={{
         // border:'1px solid red',
         width:'100%',
-        padding:'40px',
+        padding:'20px',
         borderRadius: '3px',
         background: '#ffffff',
-        boxShadow: ' 6px 6px 8px #d5d5d5  -6px -6px 8px #ebebeb',
+        // boxShadow: ' 6px 6px 8px #d5d5d5  -6px -6px 8px #ebebeb',
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
@@ -141,17 +148,56 @@ const Counselling = () => {
         {counsellors.map(counsellor => (
           <Grid item key={counsellor.id} xs={12} sm={6} md={4} style={{
             // border:'2px solid green',
-            padding:'4px'
+            padding:'2px'
           }}>
             <Card style={{
-                height:'430px',
+                height:'330px',
                 borderRadius:'12px',
                 width:'300px',
                 margin:'24px',
                 // border:'2px solid pink',
-                position:'relative'
+                position:'relative',
+                // padding:'10px'
+            }} sx={{maxWidth: 345}}>
+            <Stack direction="row" alignItems="Center" spacing={2} style={{
+              background:'yellow',
+              padding:'6px'
             }}>
-              <CardMedia
+                 <Avatar alt={counsellor.name} src={counsellor.image} sx={{width:76, height:76}}></Avatar>
+                 <Stack>
+                 <Typography variant='h6'>{counsellor.name}</Typography>
+                 <Typography varient='subtitle2'>Degree</Typography>
+                 </Stack>
+                 
+            </Stack>
+            <Stack direction="row" spacing={1} mt={2}>
+          <IconButton>
+            <Phone />
+          </IconButton>
+          <IconButton>
+            <VideoCall />
+          </IconButton>
+          <IconButton>
+            <Message />
+          </IconButton>
+        </Stack>
+        <Stack sx={{mt: 3 ,padding: 1 }}>
+          Languages(dynamic)
+        </Stack>
+          <Stack style={{
+            display:'flex',
+            alignItems:'center'
+          }}>
+          <Button variant="contained"  sx={{ mt: 8 }} 
+        onClick={() => handelBookNow(counsellor)}
+        style={{
+          width:'150px'
+        }}
+        >
+          View Profile
+        </Button>
+          </Stack>
+              {/* <CardMedia
                 component="img"
                 alt={counsellor.name}
                 height="300px"
@@ -162,16 +208,16 @@ const Counselling = () => {
                     borderEndStartRadius:'12px',
                     borderBottomRightRadius:'12px',
                 }}
-              />
-              <CardContent>
+              /> */}
+              {/* <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {counsellor.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   Rating: {counsellor.rating}/5
                 </Typography>
-              </CardContent>
-              <Button size="large" variant="contained" color="primary" 
+              </CardContent> */}
+              {/* <Button size="large" variant="contained" color="primary" 
               style={{
                 position:'absolute',
                 right:'6px',
@@ -185,7 +231,7 @@ const Counselling = () => {
               onClick={() => handelBookNow(counsellor)}
               >
                 BOOK NOW
-              </Button>
+              </Button> */}
             </Card>
           </Grid>
         ))}
