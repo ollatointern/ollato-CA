@@ -171,7 +171,7 @@ const Counselling = () => {
 
             <LocalizationProvider dateAdapter={AdapterDayjs} >
               <DemoContainer components={['DatePicker']}>
-                <DatePicker label="Basic date picker" />
+                <DatePicker label="Date" />
               </DemoContainer>
             </LocalizationProvider>
 
@@ -179,7 +179,7 @@ const Counselling = () => {
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={['TimePicker']}>
-                <TimePicker label="Basic time picker" />
+                <TimePicker label="Time" />
               </DemoContainer>
             </LocalizationProvider>
 
