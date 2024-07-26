@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/globalcss.css'
 import styles from './pages.module.css';
 import { useLocation } from 'react-router-dom';
 import { Container, Box, Typography, Grid, Card, CardMedia, CardContent, Button, Stack, Chip, Avatar } from '@mui/material';
@@ -15,10 +16,13 @@ const CounsellorDetails = () => {
     <>
 <Container >
 <Stack style={{
-      marginBottom:'10px'
+      marginBottom:'26px' 
     }}>
   <Typography>
-    <Link to='/counselling'> 
+    <Link to='/counselling' style={{
+      textDecoration:'none',
+      color:'black'
+    }}> 
       Back
     </Link>
   </Typography>
