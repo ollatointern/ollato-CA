@@ -20,6 +20,8 @@ import CounsellorDetails from './Pages/CounsellorDetails';
 import SessionHistory from './Pages/SessionHistory';
 import SessionCancelation from './Pages/SessionCancelation';
 import UserProfile from './Pages/UserProfile';
+import AdminPanel from './Components/adminPanel/AdminPanel';
+import TestProcess from './Components/testProcess/TestProcess';
 // import Profile  from './Pages/Profile';
 function App() {
 
@@ -46,6 +48,8 @@ function App() {
        <Route path='/SessionHistory' element={<SessionHistory />}/>
        <Route path='/UserProfile' element={<UserProfile/>}/>
        <Route path='/cancel-session/:id' element={<SessionCancelation/>}/>
+       <Route path="/admin" element={<AdminPanel/>}/>
+       <Route path='/TestProcess' element={<TestProcess/>} />
        </Routes>
      </div>
       </div>
