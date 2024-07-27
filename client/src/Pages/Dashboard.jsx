@@ -1,5 +1,6 @@
 // import React from 'react'
 import './dashboard.css'
+import '../css/globalcss.css'
 import { Link } from 'react-router-dom'
 // import { IoPieChart } from "react-icons/io5";
 import { Carousel } from 'react-responsive-carousel';

@@ -9,6 +9,6 @@ html, body{
 
 .cardWrapper{
     border-radius: 12px;
-    box-shadow: inset  4px 4px 6px #d5d5d5 ,inset -4px -4px 6px #d5d5d5; 
+    box-shadow:   4px 4px 6px #d5d5d5 , -4px -4px 6px #d5d5d5; 
     /* border: 2px solid red; */
 }
