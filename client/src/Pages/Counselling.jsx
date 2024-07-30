@@ -14,14 +14,19 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { Phone, VideoCall, Message, Home, Mode } from '@mui/icons-material';
 
-
-
-import { Phone, VideoCall, Message, Home } from '@mui/icons-material';
 const Counselling = () => {
   const [counsellors, setCounsellors] = useState([]);
-  // const history = useHistory();
+  const [filteredCounsellors, setFilteredCounsellors] = useState([]);
+  const [expertise, setExpertise] = React.useState('');
+  const [location, setLocation] = React.useState('');
+  const [language, setLanguage] = React.useState('');
+  const [duration, setDuration] = React.useState('');
+  const [mode, setMode] = React.useState('');
+
   const navigate = useNavigate();
+
   useEffect(() => {
     // Simulate fetching data
     const fetchData = async () => {
@@ -31,86 +36,116 @@ const Counselling = () => {
           name: "John Matrin",
           rating: 3.5,
           image: CounsellorImg,
-          bookNowLink: "#",
+          // bookNowLink: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.    ",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: "05 March 2022",
-              languages: ['English', 'Hindi'],
+          date: '07/27/2024',
+          time: "10:00 AM",
+          expertise: ['Career Counsellor'],
+          mode: ['Online Video Calling\n', 'Online Voice Calling'],
+          duration: ['30 minutes', '60 minutes'],
+          languages: ['English', 'Hindi'],
+          location: ['Mumbai' , 'Ahemdabad']
+          
         },
         {
           id: 2,
           name: "John Matrin",
           rating: 3.5,
-          image: "https://via.placeholder.com/150",
-          bookNowLink: "#",
+          image: CounsellorImg,
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: "05 March 2022",
-              languages: ['English', 'Hindi'],
+          date: '07/28/2024',
+          time: ["10:00 AM", "1:00 PM"],
+          expertise: ['Mentor'],
+          mode: ['Online Video Calling'],
+          duration: ['30 minutes'],
+          languages: ['Gujrati', 'Bengali'],
+          location: ['Bengalore' , 'Hyderabad']
         },
         {
           id: 3,
           name: "John Matrin",
           rating: 3.5,
-          image: "https://via.placeholder.com/150",
-          bookNowLink: "#",
+          image: CounsellorImg,
+          Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: "05 March 2022",
-              languages: ['English', 'Hindi'],
+          date: '07/27/2024',
+          time: "10:00 AM",
+          expertise: ['Career Guidance'],
+          mode: ['Online Video Calling', 'Online Voice Calling'],
+          duration: ['30 minutes', '60 minutes'],
+          languages: ['English', ' Hindi'],
+          location: ['Mumbai' , ' Ahemdabad']
         },
         {
           id: 4,
           name: "John Matrin",
           rating: 3.5,
-          image: "https://via.placeholder.com/150",
-          bookNowLink: "#",
+          image: CounsellorImg,
+          // Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: "05 March 2022",
-              languages: ['English', 'Hindi'],
+          date: '07/27/2024',
+          time: "10:00 AM",
+          expertise: ['Subject Expertise'],
+          mode: ['Online Video Calling', 'Online Voice Calling'],
+          duration: ['30 minutes', '60 minutes'],
+          languages: ['English', ' Hindi'],
+          location: ['Mumbai' , ' Ahemdabad']
         },
         {
           id: 5,
           name: "John Matrin",
           rating: 3.5,
-          image: "https://via.placeholder.com/150",
-          bookNowLink: "#",
+          image: CounsellorImg,
+          Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: "05 March 2022",
-              languages: ['English', 'Hindi'],
+          date: '07/27/2024',
+          time: "10:00 AM",
+          expertise: ['Career Counsellor'],
+          mode: ['Online Voice Calling', 'Online Chat', 'Offline In Person'],
+          duration: ['30 minutes', '60 minutes'],
+          languages: ['English', 'Hindi'],
+          location: ['Mumbai' , 'Ahemdabad']
         },
         {
           id: 6,
           name: "John Matrin",
           rating: 3.5,
-          image: "https://via.placeholder.com/150",
-          bookNowLink: "#",
+          image: CounsellorImg,
+          Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: "05 March 2022",
-              languages: ['English', 'Hindi'],
+          date: '07/27/2024',
+          time: "10:00 AM",
+          expertise: ['Mentor'],
+          mode: ['Online Video Calling', 'Online Voice Calling'],
+          duration: ['30 minutes', '60 minutes'],
+          languages: ['English', 'Hindi'],
+          location: ['Mumbai' , 'Ahemdabad']
         }
       ];
       setCounsellors(data);
+      setFilteredCounsellors(data);
     };
 
     fetchData();
   }, []);
 
-  const handelBookNow = (counsellor) => {
+  const handelViewProfile = (counsellor) => {
     navigate(`/counsellor/${counsellor.id}`, { state: { counsellor } })
   };
 
-  const [expertise, setExpertise] = React.useState('');
-  const [location, setLocation] = React.useState('');
-  const [language, setLanguage] = React.useState('');
-  const [duration, setDuration] = React.useState('');
-  const [mode, setMode] = React.useState('');
-
   const handleExpertise = (event) => {
     setExpertise(event.target.value);
+    // filterCounsellors(event.target.value);
+    // const selected = event.target.value; 
+    // setExpertise(selected);
+    // filterCounsellors(selected);
+
   }
 
   const handleMode = (event) => {
@@ -128,6 +163,45 @@ const Counselling = () => {
   const handleLocation = (event) => {
     setLocation(event.target.value);
   }
+     
+  useEffect(() => {
+    const filteredCounsellors = counsellors.filter(counsellor => {
+      return (
+        (!expertise || counsellor.expertise.includes(expertise)) &&
+        (!location || counsellor.location.includes(location)) &&
+        (!language || counsellor.languages.includes(language)) &&
+        (!duration || counsellor.duration.includes(duration)) &&
+        (!mode || counsellor.mode.includes(mode))
+      );
+    });
+
+    setFilteredCounsellors(filteredCounsellors);
+  })
+       
+  
+
+  // const filterCounsellors  = (selectedExpertise) => {
+  //   const filtered = counsellors.filter(counsellor => 
+  //     selectedExpertise == ' ' || counsellor.expertise.includes(selectedExpertise))
+  //    setFilteredCounsellors(filtered)
+  //    console.log("filter is working" , filtered)  
+  // }
+  
+  // useEffect(() => {
+  //   const filteredCounsellors = () => {
+  //     return counsellors.filter(counsellors => {
+  //       return (
+  //         (!expertise || counsellors.expertise.includes(expertise))
+  //         // (!location || counselor.location.includes(location)) &&
+  //         // (!language || counselor.languages.includes(language)) &&
+  //         // (!duration || counselor.duration.includes(duration)) &&
+  //         // (!mode || counselor.mode.includes(mode))
+  //       );
+  //     });
+  //   };
+
+  //   setFilteredCounsellors(filteredCounsellors());
+  // }, [expertise]);
 
   return (
     <>
@@ -166,119 +240,119 @@ const Counselling = () => {
         <Typography variant="h5" component="h3" style={{ border: '2px solid ' }}>
           Filter</Typography>
 
-          <Box mb={2} mt={2} component="section" style={{
-            // border:'1px solid blue',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row'
-            // marginBottom: '115px'
-          }}>
+        <Box mb={2} mt={2} component="section" style={{
+          // border:'1px solid blue',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row'
+          // marginBottom: '115px'
+        }}>
 
-            {/* date select -------------------------------------- */}
+          {/* date select -------------------------------------- */}
 
-            <LocalizationProvider dateAdapter={AdapterDayjs} >
-              <DemoContainer components={['DatePicker']}>
-                <DatePicker label="Date" />
-              </DemoContainer>
-            </LocalizationProvider>
+          <LocalizationProvider dateAdapter={AdapterDayjs} >
+            <DemoContainer components={['DatePicker']}>
+              <DatePicker label="Date" />
+            </DemoContainer>
+          </LocalizationProvider>
 
-            {/* time select -------------------------------------- */}
+          {/* time select -------------------------------------- */}
 
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={['TimePicker']}>
-                <TimePicker label="Time" />
-              </DemoContainer>
-            </LocalizationProvider>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={['TimePicker']}>
+              <TimePicker label="Time" />
+            </DemoContainer>
+          </LocalizationProvider>
 
-            {/* expertise select----------------------------  */}
+          {/* expertise select----------------------------  */}
 
-            <FormControl fullWidth className='expertise-select'>
-              <InputLabel id="demo-simple-select-label">Expertise</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={expertise}
-                label="Expertise"
-                onChange={handleExpertise}
-              >
-                <MenuItem value={10}>Career Counsellor</MenuItem>
-                <MenuItem value={20}>Career Guidance</MenuItem>
-                <MenuItem value={30}>Subject Expertise</MenuItem>
-                <MenuItem value={40}>Mentor</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth className='expertise-select'>
+            <InputLabel id="demo-simple-select-label">Expertise</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={expertise}
+              label="Expertise"
+              onChange={handleExpertise}
+            >
+              <MenuItem value="Career Counsellor">Career Counsellor</MenuItem>
+              <MenuItem value="Career Guidance">Career Guidance</MenuItem>
+              <MenuItem value="Subject Expertise">Subject Expertise</MenuItem>
+              <MenuItem value="Mentor">Mentor</MenuItem>
+            </Select>
+          </FormControl>
 
-            {/* mode select------------------------------- */}
+          {/* mode select------------------------------- */}
 
-            <FormControl fullWidth className='mode-select'>
-              <InputLabel id="demo-simple-select-label">Mode</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={mode}
-                label="Mode"
-                onChange={handleMode}
-              >
-                <MenuItem value={10}>Online Video Calling</MenuItem>
-                <MenuItem value={20}>Online Voice Calling</MenuItem>
-                <MenuItem value={30}>Online Chat</MenuItem>
-                <MenuItem value={40}>Offline In Person</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth className='mode-select'>
+            <InputLabel id="demo-simple-select-label">Mode</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={mode}
+              label="Mode"
+              onChange={handleMode}
+            >
+              <MenuItem value="Online Video Calling">Online Video Calling</MenuItem>
+              <MenuItem value="Online Voice Calling">Online Voice Calling</MenuItem>
+              <MenuItem value="Online Chat">Online Chat</MenuItem>
+              <MenuItem value="Offline In Person">Offline In Person</MenuItem>
+            </Select>
+          </FormControl>
 
-            {/* duration select------------------------------- */}
+          {/* duration select------------------------------- */}
 
-            <FormControl fullWidth className='duration-select'>
-              <InputLabel id="demo-simple-select-label">Duration</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={duration}
-                label="duration"
-                onChange={handleDuration}
-              >
-                <MenuItem value={10}>30 minutes</MenuItem>
-                <MenuItem value={20}>60 minutes</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth className='duration-select'>
+            <InputLabel id="demo-simple-select-label">Duration</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={duration}
+              label="duration"
+              onChange={handleDuration}
+            >
+              <MenuItem value="30 minutes">30 minutes</MenuItem>
+              <MenuItem value="60 minutes">60 minutes</MenuItem>
+            </Select>
+          </FormControl>
 
-            {/* language select------------------------------- */}
+          {/* language select------------------------------- */}
 
-            <FormControl fullWidth className='language-select'>
-              <InputLabel id="demo-simple-select-label">Language</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={language}
-                label="language"
-                onChange={handleLanguage}
-              >
-                <MenuItem value={10}>English</MenuItem>
-                <MenuItem value={20}>Hindi</MenuItem>
-                <MenuItem value={30}>Gujrati</MenuItem>
-                <MenuItem value={40}>Bengali</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth className='language-select'>
+            <InputLabel id="demo-simple-select-label">Language</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={language}
+              label="language"
+              onChange={handleLanguage}
+            >English
+              <MenuItem value="English">English</MenuItem>
+              <MenuItem value="Hindi">Hindi</MenuItem>
+              <MenuItem value="Gujrati">Gujrati</MenuItem>
+              <MenuItem value="Bengali">Bengali</MenuItem>
+            </Select>
+          </FormControl>
 
-            {/* location select------------------------------- */}
+          {/* location select------------------------------- */}
 
-            <FormControl fullWidth className='location-select'>
-              <InputLabel id="demo-simple-select-label">Location</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={location}
-                label="location"
-                onChange={handleLocation}
-              >
-                <MenuItem value={10}>Mumbai</MenuItem>
-                <MenuItem value={20}>Ahemdabad</MenuItem>
-                <MenuItem value={30}>Bengalore</MenuItem>
-                <MenuItem value={40}>Hyderabad</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth className='location-select'>
+            <InputLabel id="demo-simple-select-label">Location</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={location}
+              label="location"
+              onChange={handleLocation}
+            >
+              <MenuItem value="Mumbai">Mumbai</MenuItem>
+              <MenuItem value="Ahemdabad">Ahemdabad</MenuItem>
+              <MenuItem value="Bengalore">Bengalore</MenuItem>
+              <MenuItem value="Hyderabad">Hyderabad</MenuItem>
+            </Select>
+          </FormControl>
 
-          </Box>
+        </Box>
         {/* filtering end********************************************* */}
 
         <Grid container spacing={1} className={styles.cardWrapper} style={{
@@ -292,59 +366,65 @@ const Counselling = () => {
           // width:'100%',
 
         }}>
-          {counsellors.map(counsellor => (
+          {filteredCounsellors.map(counsellor => (
             <Grid item key={counsellor.id} xs={12} sm={6} md={4} style={{
               // border:'2px solid green',
               padding: '2px'
             }}>
               <Card style={{
-                height: '330px',
+                height: '380px',
                 borderRadius: '12px',
                 width: '300px',
                 margin: '24px',
                 // border:'2px solid pink',
                 position: 'relative',
                 // padding:'10px'
-              }} sx={{maxWidth: 345}}>
-              <Stack direction="row" alignItems="Center" spacing={2} style={{
-              background:'yellow',
-              padding:'6px'
-            }}>
-                 <Avatar alt={counsellor.name} src={counsellor.image} sx={{width:76, height:76}}></Avatar>
-                 <Stack>
-                 <Typography variant='h6'>{counsellor.name}</Typography>
-                 <Typography varient='subtitle2'>Degree</Typography>
-                 </Stack>
-                 
-            </Stack>
-            <Stack direction="row" spacing={1} mt={2}>
-          <IconButton>
-            <Phone />
-          </IconButton>
-          <IconButton>
-            <VideoCall />
-          </IconButton>
-          <IconButton>
-            <Message />
-          </IconButton>
-        </Stack>
-        <Stack sx={{mt: 3 ,padding: 1 }}>
-          Languages(dynamic)
-        </Stack>
-          <Stack style={{
-            display:'flex',
-            alignItems:'center'
-          }}>
-          <Button variant="contained"  sx={{ mt: 8 }} 
-        onClick={() => handelBookNow(counsellor)}
-        style={{
-          width:'150px'
-        }}
-        >
-          View Profile
-        </Button>
-          </Stack>
-              {/* <CardMedia
+              }} sx={{ maxWidth: 345 }}>
+                <Stack direction="row" alignItems="Center" spacing={2} style={{
+                  background: 'yellow',
+                  padding: '6px'
+                }}>
+                  <Avatar alt={counsellor.name} src={counsellor.image} sx={{ width: 76, height: 76 }}></Avatar>
+                  <Stack>
+                    <Typography variant='h6'>{counsellor.name}</Typography>
+                    <Typography varient='subtitle2'>Degree</Typography>
+                  </Stack>
+
+                </Stack>
+                <Stack direction="row" spacing={1} mt={2}>
+                  <IconButton>
+                    <Phone />
+                  </IconButton>
+                  <IconButton>
+                    <VideoCall />
+                  </IconButton>
+                  <IconButton>
+                    <Message />
+                  </IconButton>
+                </Stack>
+                <Stack sx={{ mt: 1, padding: 1}}>
+                  Expertise: {counsellor.expertise} <br/>
+                  Mode: {counsellor.mode} <br/>
+                  Duration: {counsellor.duration} <br/>
+                  Languages : {counsellor.languages} <br/>
+                  Location: {counsellor.location} <br />
+                  Time: {counsellor.time} <br />
+                  Date: {counsellor.date}
+                </Stack>
+                <Stack style={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  <Button variant="contained" sx={{ mt: 2 }}
+                    onClick={() => handelViewProfile(counsellor)}
+                    style={{
+                      width: '150px'
+                    }}
+                  >
+                    View Profile 
+                  </Button>
+                </Stack>
+                {/* <CardMedia
                   component="img"
                   alt={counsellor.name}
                   height="300px"

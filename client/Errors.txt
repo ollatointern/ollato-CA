@@ -1,0 +1,129 @@
+  useEffect(() => {
+    // Simulate fetching data
+    const fetchData = async () => {
+      const data = [
+        {
+          id: 1,
+          name: "John Matrin",
+          rating: 3.5,
+          image: CounsellorImg,
+          // bookNowLink: "#",
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.    ",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: '07/27/2024',
+          time: "10:00 AM",
+          expertise: ['Career Counsellor'],
+          mode: ['Online Video Calling(icon)', ' Online Voice Calling (icon)'],
+          duration: ['30 minutes', ' 60 minutes'],
+          languages: ['English', ' Hindi'],
+          location: ['Mumbai' , ' Ahemdabad']
+          
+        },
+        {
+          id: 2,
+          name: "John Matrin",
+          rating: 3.5,
+          image: CounsellorImg,
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: '07/28/2024',
+          time: ["10:00 AM", " 1:00 PM"],
+          expertise: ['Mentor'],
+          mode: ['Online Video Calling(icon)'],
+          duration: ['30 minutes'],
+          languages: ['Gujrati', ' Bengali'],
+          location: ['Bengalore' , ' Hyderabad']
+        },
+        {
+          id: 3,
+          name: "John Matrin",
+          rating: 3.5,
+          image: "https://via.placeholder.com/150",
+          Link: "#",
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: "05 March 2022",
+          languages: ['English', 'Hindi'],
+        },
+        {
+          id: 4,
+          name: "John Matrin",
+          rating: 3.5,
+          image: "https://via.placeholder.com/150",
+          // Link: "#",
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: "05 March 2022",
+          languages: ['English', 'Hindi'],
+        },
+        {
+          id: 5,
+          name: "John Matrin",
+          rating: 3.5,
+          image: "https://via.placeholder.com/150",
+          Link: "#",
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: "05 March 2022",
+          languages: ['English', 'Hindi'],
+        },
+        {
+          id: 6,
+          name: "John Matrin",
+          rating: 3.5,
+          image: "https://via.placeholder.com/150",
+          Link: "#",
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: "05 March 2022",
+          languages: ['English', 'Hindi'],
+        }
+      ];
+      setCounsellors(data);
+      // setFilteredCounsellors(data);
+    };
+
+    fetchData();
+  }, []);
+
+this is the data i want to filter but was unable to filter so this was a challenge i faced and now i am solving this challenge by making the cousellors data into another file and fetching them to cousellors.jsx component 
+
+for this i have to understand the basics of useState and useEffect which i understood by watching piyush agarwals MASTER REACT videos
+
+soleved this error by changinf the values in the Counsellor card menu select the values initially were in numbers and not letters so when i chaged that the filter code i wrote previously was working perfectly 
+ 
+ my filtering vode was something like this: 
+ const filterCounsellors  = (selectedExpertise) => {
+    const filtered = counsellors.filter(counsellor => 
+      selectedExpertise == ' ' || counsellor.expertise.includes(selectedExpertise))
+     setFilteredCounsellors(filtered)
+     console.log("filter is working" , filtered)  
+  }
+
+  here i took the selected counsellors expertise in the select box and the vlaue of that slect would match the object value in the counsellors static data
+  for example 
+
+  {
+          id: 2,
+          name: "John Matrin",
+          rating: 3.5,
+          image: CounsellorImg,
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
+          slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
+          date: '07/28/2024',
+          time: ["10:00 AM", " 1:00 PM"],
+          ==========expertise: ['Mentor'],======== this line the value is Mentor 
+          mode: ['Online Video Calling(icon)'],
+          duration: ['30 minutes'],
+          languages: ['Gujrati', ' Bengali'],
+          location: ['Bengalore' , ' Hyderabad']
+        }, 
+
+        i matched it with the value in menu select
+              <MenuItem value="Career Counsellor">Career Counsellor</MenuItem>
+              <MenuItem value="Career Guidance">Career Guidance</MenuItem>
+              <MenuItem value="Subject Expertise">Subject Expertise</MenuItem>
+              <MenuItem =========value="Mentor"========>Mentor</MenuItem>
+hence this problem of filtering was solved this way 
+
+before there were numbers in the value section thats why the code wasnt working hence remember whenever performing a filtering logic always remeber to update the values in the array as well as the selection and make sure they bothmatch and are same 

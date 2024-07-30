@@ -18,6 +18,8 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import CounsellorImage from '../assets/counsellor.jpg';
+import './package.css';
+import { FaAngleLeft } from "react-icons/fa";
 // import { sessionsData } from './SessionHistory';
 export const sessionsData = [
   { id: 1, studentName: 'Samanta William', studentEmail: 'samanta@mail.com', counsellorName: 'John Matrin', counsellorEmail: 'john@mail.com', date: '01 Feb 2022', time: '10:00 AM', status: 'Pending', counsellorImage: CounsellorImage },
@@ -74,6 +76,25 @@ const SessionHistory = () => {
   return (
  <>
 <Container>
+<div className="back-btn">
+                    <Link
+                    to='/Counselling'
+                    style={{
+                        display:'flex',
+                        alignItems:'center',
+                        fontSize:'18px',
+                        textDecoration:'none',
+                        color:'black'
+                    }}
+                    ><span
+                    style={{
+                        display:'flex',
+                        alignItems:'center',
+                        fontSize:'18px',
+                        padding:'4px'
+                    }}
+                    ><FaAngleLeft size={30} /> Back</span> </Link>
+                </div>
       <Typography variant="h4" gutterBottom>
         Counselling Session History
       </Typography>
