@@ -77,7 +77,7 @@ const Counselling = () => {
           expertise: ['Career Guidance'],
           mode: ['Online Video Calling', 'Online Voice Calling'],
           duration: ['30 minutes', '60 minutes'],
-          languages: ['English', ' Hindi'],
+          languages: ['English', 'Hindi'],
           location: ['Mumbai' , ' Ahemdabad']
         },
         {
@@ -373,9 +373,9 @@ const Counselling = () => {
               padding: '2px'
             }}>
               <Card style={{
-                height: '380px',
+                height: '450px',
                 borderRadius: '12px',
-                width: '300px',
+                width: '400px',
                 margin: '24px',
                 // border:'2px solid pink',
                 position: 'relative',
