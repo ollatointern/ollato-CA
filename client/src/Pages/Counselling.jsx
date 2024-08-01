@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Card, CardMedia, CardContent, Typography, Button, Container, Box, Stack, Avatar, IconButton } from '@mui/material';
+import { Grid, Card, CardMedia, CardContent, Typography, Button, Container, Box, Stack, Avatar, IconButton, TextField } from '@mui/material';
 import styles from './pages.module.css';
 // import {useHistory} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -19,11 +19,14 @@ import { Phone, VideoCall, Message, Home, Mode } from '@mui/icons-material';
 const Counselling = () => {
   const [counsellors, setCounsellors] = useState([]);
   const [filteredCounsellors, setFilteredCounsellors] = useState([]);
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
   const [expertise, setExpertise] = React.useState('');
   const [location, setLocation] = React.useState('');
   const [language, setLanguage] = React.useState('');
   const [duration, setDuration] = React.useState('');
   const [mode, setMode] = React.useState('');
+  const [noCounsellorsFound, setNoCounsellorsFound] = useState(false);
 
   const navigate = useNavigate();
 
@@ -36,17 +39,15 @@ const Counselling = () => {
           name: "John Matrin",
           rating: 3.5,
           image: CounsellorImg,
-          // bookNowLink: "#",
-          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.    ",
+          details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on. Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: '07/27/2024',
-          time: "10:00 AM",
+          date: ['07/27/2024'],
+          time: ["10:00 AM"],
           expertise: ['Career Counsellor'],
-          mode: ['Online Video Calling\n', 'Online Voice Calling'],
+          mode: ['Online Video Calling', 'Online Voice Calling'],
           duration: ['30 minutes', '60 minutes'],
           languages: ['English', 'Hindi'],
           location: ['Mumbai' , 'Ahemdabad']
-          
         },
         {
           id: 2,
@@ -55,8 +56,8 @@ const Counselling = () => {
           image: CounsellorImg,
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: '07/28/2024',
-          time: ["10:00 AM", "1:00 PM"],
+          date: ['07/28/2024'],
+          time: ["10:00 AM", "01:00 PM"],
           expertise: ['Mentor'],
           mode: ['Online Video Calling'],
           duration: ['30 minutes'],
@@ -71,8 +72,8 @@ const Counselling = () => {
           Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: '07/27/2024',
-          time: "10:00 AM",
+          date: ['07/31/2024'],
+          time: ["10:00 AM"],
           expertise: ['Career Guidance'],
           mode: ['Online Video Calling', 'Online Voice Calling'],
           duration: ['30 minutes', '60 minutes'],
@@ -84,15 +85,14 @@ const Counselling = () => {
           name: "John Matrin",
           rating: 3.5,
           image: CounsellorImg,
-          // Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: '07/27/2024',
-          time: "10:00 AM",
+          date: ['07/27/2024'],
+          time: ["10:00 AM" , "12:00 PM", "04:00 PM", "06:00 PM"],
           expertise: ['Subject Expertise'],
           mode: ['Online Video Calling', 'Online Voice Calling'],
           duration: ['30 minutes', '60 minutes'],
-          languages: ['English', ' Hindi'],
+          languages: ['English', 'Hindi'],
           location: ['Mumbai' , ' Ahemdabad']
         },
         {
@@ -103,8 +103,8 @@ const Counselling = () => {
           Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: '07/27/2024',
-          time: "10:00 AM",
+          date: ['07/27/2024'],
+          time: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM"],
           expertise: ['Career Counsellor'],
           mode: ['Online Voice Calling', 'Online Chat', 'Offline In Person'],
           duration: ['30 minutes', '60 minutes'],
@@ -119,8 +119,8 @@ const Counselling = () => {
           Link: "#",
           details: "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on.",
           slots: ["10:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"],
-          date: '07/27/2024',
-          time: "10:00 AM",
+          date: ['07/31/2024'],
+          time: ["10:00 AM", "01:00 PM", "02:00 PM", "06:00 PM"],
           expertise: ['Mentor'],
           mode: ['Online Video Calling', 'Online Voice Calling'],
           duration: ['30 minutes', '60 minutes'],
@@ -128,6 +128,7 @@ const Counselling = () => {
           location: ['Mumbai' , 'Ahemdabad']
         }
       ];
+      
       setCounsellors(data);
       setFilteredCounsellors(data);
     };
@@ -138,6 +139,21 @@ const Counselling = () => {
   const handelViewProfile = (counsellor) => {
     navigate(`/counsellor/${counsellor.id}`, { state: { counsellor } })
   };
+
+  // const handleDate = (event) => {
+  //   setDate(event.target.value);
+  // }
+
+  const handleTime = (newTime) => {
+    const formattedTime = newTime ? newTime.format('hh:mm A') : '';
+  setTime(formattedTime);
+  console.log("Selected time:", formattedTime);  // Debug log
+  }
+
+  const handleDate = (newDate) => {
+    setDate(newDate ? newDate.format('MM/DD/YYYY') : '');
+  }
+
 
   const handleExpertise = (event) => {
     setExpertise(event.target.value);
@@ -167,6 +183,8 @@ const Counselling = () => {
   useEffect(() => {
     const filteredCounsellors = counsellors.filter(counsellor => {
       return (
+        (!date || counsellor.date.includes(date)) &&
+        (!time || counsellor.time.includes(time)) &&  
         (!expertise || counsellor.expertise.includes(expertise)) &&
         (!location || counsellor.location.includes(location)) &&
         (!language || counsellor.languages.includes(language)) &&
@@ -176,32 +194,9 @@ const Counselling = () => {
     });
 
     setFilteredCounsellors(filteredCounsellors);
-  })
-       
-  
-
-  // const filterCounsellors  = (selectedExpertise) => {
-  //   const filtered = counsellors.filter(counsellor => 
-  //     selectedExpertise == ' ' || counsellor.expertise.includes(selectedExpertise))
-  //    setFilteredCounsellors(filtered)
-  //    console.log("filter is working" , filtered)  
-  // }
-  
-  // useEffect(() => {
-  //   const filteredCounsellors = () => {
-  //     return counsellors.filter(counsellors => {
-  //       return (
-  //         (!expertise || counsellors.expertise.includes(expertise))
-  //         // (!location || counselor.location.includes(location)) &&
-  //         // (!language || counselor.languages.includes(language)) &&
-  //         // (!duration || counselor.duration.includes(duration)) &&
-  //         // (!mode || counselor.mode.includes(mode))
-  //       );
-  //     });
-  //   };
-
-  //   setFilteredCounsellors(filteredCounsellors());
-  // }, [expertise]);
+    setNoCounsellorsFound(filteredCounsellors.length === 0);
+    // console.log("filteredCounsellors is working", filteredCounsellors);
+  }, [date, time, expertise, location, language, duration, mode, counsellors]);
 
   return (
     <>
@@ -237,14 +232,13 @@ const Counselling = () => {
         </Box>
 
         {/* filtering section ***************************************************** */}
-        <Typography variant="h5" component="h3" style={{ border: '2px solid ' }}>
-          Filter</Typography>
-
+       
         <Box mb={2} mt={2} component="section" style={{
-          // border:'1px solid blue',
+          border:'1px solid blue',
           width: '100%',
           display: 'flex',
-          flexDirection: 'row'
+          padding: '10px'
+          // flexDirection: 'row'
           // marginBottom: '115px'
         }}>
 
@@ -252,7 +246,8 @@ const Counselling = () => {
 
           <LocalizationProvider dateAdapter={AdapterDayjs} >
             <DemoContainer components={['DatePicker']}>
-              <DatePicker label="Date" />
+              <DatePicker label="Date" onChange={handleDate}
+               slotProps={{ textField: { fullWidth: true } }} />
             </DemoContainer>
           </LocalizationProvider>
 
@@ -260,7 +255,8 @@ const Counselling = () => {
 
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={['TimePicker']}>
-              <TimePicker label="Time" />
+              <TimePicker label="Time" onChange={handleTime} 
+              slotProps={{ textField: { fullWidth: true } }}/>
             </DemoContainer>
           </LocalizationProvider>
 
@@ -355,16 +351,21 @@ const Counselling = () => {
         </Box>
         {/* filtering end********************************************* */}
 
+
+
+
+
+        {noCounsellorsFound ?( 
+          <Typography variant="h6" style={{ color: 'red' }}>
+            No counsellors found
+            </Typography>
+          ) : (
         <Grid container spacing={1} className={styles.cardWrapper} style={{
           // border:'1px solid red',
           padding: '10px',
           marginRight: '0',
           margin: '10px',
           background: '#ffffff',
-
-
-          // width:'100%',
-
         }}>
           {filteredCounsellors.map(counsellor => (
             <Grid item key={counsellor.id} xs={12} sm={6} md={4} style={{
@@ -403,13 +404,13 @@ const Counselling = () => {
                   </IconButton>
                 </Stack>
                 <Stack sx={{ mt: 1, padding: 1}}>
-                  Expertise: {counsellor.expertise} <br/>
-                  Mode: {counsellor.mode} <br/>
-                  Duration: {counsellor.duration} <br/>
-                  Languages : {counsellor.languages} <br/>
-                  Location: {counsellor.location} <br />
-                  Time: {counsellor.time} <br />
-                  Date: {counsellor.date}
+                  Expertise: {counsellor.expertise.join(", ")} <br/>
+                  Mode: {counsellor.mode.join(", ")} <br/>
+                  Duration: {counsellor.duration.join(", ")} <br/>
+                  Languages : {counsellor.languages.join(", ")} <br/>
+                  Location: {counsellor.location.join(", ")} <br />
+                  Time: {counsellor.time.join(", ")} <br />
+                  Date: {counsellor.date.join(", ")}
                 </Stack>
                 <Stack style={{
                   display: 'flex',
@@ -463,6 +464,7 @@ const Counselling = () => {
             </Grid>
           ))}
         </Grid>
+          )} 
       </Container>
     </>
   )

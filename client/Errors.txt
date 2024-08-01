@@ -127,3 +127,12 @@ soleved this error by changinf the values in the Counsellor card menu select the
 hence this problem of filtering was solved this way 
 
 before there were numbers in the value section thats why the code wasnt working hence remember whenever performing a filtering logic always remeber to update the values in the array as well as the selection and make sure they bothmatch and are same 
+
+
+*ERROR 2*
+
+Date and Time filtering not working !!!!!!!!!!!
+i think i have to change the date and time data into string or something for it to fetch and check 
+yes i did it the data tyoe was the problem thats why the filtering was not working i tried to fix the changes by giving the date anf time the value of 
+string by changing its format and it worked the filtering of date and time worked properly now  also added the property of no counsellors found when the
+counsellors dont exist given by the filter so after that it shows no counsellor found if even after filtring their is no counsellor to their match 

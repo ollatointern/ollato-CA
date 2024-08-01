@@ -22,6 +22,9 @@ function App() {
 return (
     <BrowserRouter>
     <div className="app-container">
+      {/* <Routes>
+    <Route path = "/Login" element={<Login />} />
+    </Routes> */}
     {/* <Routes>
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path = "/Login" element={<Login />} />

@@ -205,7 +205,7 @@ const Package = () => {
           </Grid>
         </Grid>
       </Box>
-    )};
+    )}
     </Box>
         </div>
        </div>
