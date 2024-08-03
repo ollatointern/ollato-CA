@@ -111,7 +111,7 @@ const Login = () => {
          </div>
 
          <div className="createAccount">
-            <p> Don't have account yet? <Link to="#" style={{ textDecoration: 'none', color:'#B75B2E' }}> <strong>Create an account</strong></Link></p>
+            <p> Don't have account yet? <Link to="/Register" style={{ textDecoration: 'none', color:'#B75B2E' }}> <strong>Create an account</strong></Link></p>
          </div>
          </div>    
          

@@ -22,15 +22,12 @@ function App() {
 return (
     <BrowserRouter>
     <div className="app-container">
-      {/* <Routes>
-    <Route path = "/Login" element={<Login />} />
-    </Routes> */}
-    {/* <Routes>
-        <Route path="/Dashboard" element={<Dashboard />} />
+    <Routes>
+        {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
         <Route path = "/Login" element={<Login />} />
         <Route path = "/Register" element={<Register/>}/>
-      </Routes> */}
-    <div className="sidebar">
+      </Routes>
+    {/* <div className="sidebar">
     <SideBar/>
     </div>
       <div className="main-content">
@@ -51,7 +48,7 @@ return (
        <Route path='/cancel-session/:id' element={<SessionCancelation/>}/>
        </Routes>
      </div>
-      </div>
+      </div> */}
     </div>
     </BrowserRouter>
   )
