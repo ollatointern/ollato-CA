@@ -1,11 +1,14 @@
 import React from 'react'
-import Component from '../components/Component'
+import NavBar from '../components/NavBar'
+import SideBar from '../components/SideBar'
+import Dashboard from './pages/Dashboard'
 
 function Student() {
     return (
         <div>
-            <Component />
-            <h1>Student Page</h1>
+            <NavBar />
+            <SideBar />
+            <Dashboard />
         </div>
     )
 }
