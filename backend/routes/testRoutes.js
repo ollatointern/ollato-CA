@@ -1,14 +1,8 @@
 const express = require('express');
-const {
-  getTests,
-  getTestById,
-  createTest,
-  updateTest,
-  deleteTest,
-} = require('../controllers/testController');
+const { createTest, getAllTests } = require('../controllers/testController');
 const router = express.Router();
 
-router.route('/').get(getTests).post(createTest);
-router.route('/:id').get(getTestById).put(updateTest).delete(deleteTest);
+router.post('/create', createTest);
+router.get('/', getAllTests);
 
 module.exports = router;

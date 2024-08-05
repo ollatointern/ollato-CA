@@ -1,67 +1,98 @@
-const asyncHandler = require('express-async-handler');
-const Question = require('../models/questionModel');
+const Question = require('../models/Question');
+const Option = require('../models/Option');
 
-// @desc    Fetch all questions for a test
-// @route   GET /api/questions/:testId
-// @access  Public
-const getQuestionsByTestId = asyncHandler(async (req, res) => {
-  const questions = await Question.find({ test: req.params.testId });
-  res.json(questions);
-});
-
-// @desc    Create a question
-// @route   POST /api/questions
-// @access  Private/Admin
-const createQuestion = asyncHandler(async (req, res) => {
-  const { test, questionText, options, correctOption } = req.body;
-  const question = new Question({
-    test,
-    questionText,
-    options,
-    correctOption,
-  });
-  const createdQuestion = await question.save();
-  res.status(201).json(createdQuestion);
-});
-
-// @desc    Update a question
-// @route   PUT /api/questions/:id
-// @access  Private/Admin
-const updateQuestion = asyncHandler(async (req, res) => {
-  const { questionText, options, correctOption } = req.body;
-  const question = await Question.findById(req.params.id);
-
-  if (question) {
-    question.questionText = questionText || question.questionText;
-    question.options = options || question.options;
-    question.correctOption = correctOption || question.correctOption;
-
-    const updatedQuestion = await question.save();
-    res.json(updatedQuestion);
-  } else {
-    res.status(404);
-    throw new Error('Question not found');
+exports.createQuestion = async (req, res) => {
+  try {
+    const question = await Question.create(req.body);
+    res.status(201).json(question);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-});
+};
 
-// @desc    Delete a question
-// @route   DELETE /api/questions/:id
-// @access  Private/Admin
-const deleteQuestion = asyncHandler(async (req, res) => {
-  const question = await Question.findById(req.params.id);
-
-  if (question) {
-    await question.remove();
-    res.json({ message: 'Question removed' });
-  } else {
-    res.status(404);
-    throw new Error('Question not found');
+exports.getQuestionsByTestId = async (req, res) => {
+  try {
+    const questions = await Question.getByTestId(req.params.test_id);
+    res.status(200).json(questions);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-});
+};
 
-module.exports = {
-  getQuestionsByTestId,
-  createQuestion,
-  updateQuestion,
-  deleteQuestion,
+exports.getQuestionById = async (req, res) => {
+  try {
+    const question = await Question.getById(req.params.id);
+    if (!question) {
+      return res.status(404).json({ message: 'Question not found' });
+    }
+    res.status(200).json(question);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.updateQuestion = async (req, res) => {
+  try {
+    const question = await Question.updateQuestion(req.params.id, req.body);
+    res.status(200).json(question);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.deleteQuestion = async (req, res) => {
+  try {
+    await Question.deleteQuestion(req.params.id);
+    res.status(200).json({ message: 'Question deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.addOption = async (req, res) => {
+  try {
+    const option = await Option.create(req.body);
+    res.status(201).json(option);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.getOptionsByQuestionId = async (req, res) => {
+  try {
+    const options = await Option.getByQuestionId(req.params.question_id);
+    res.status(200).json(options);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.getOptionById = async (req, res) => {
+  try {
+    const option = await Option.getById(req.params.id);
+    if (!option) {
+      return res.status(404).json({ message: 'Option not found' });
+    }
+    res.status(200).json(option);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.updateOption = async (req, res) => {
+  try {
+    const option = await Option.updateOption(req.params.id, req.body);
+    res.status(200).json(option);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.deleteOption = async (req, res) => {
+  try {
+    await Option.deleteOption(req.params.id);
+    res.status(200).json({ message: 'Option deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
