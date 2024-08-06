@@ -1,36 +1,19 @@
 const Test = require('../models/Test');
 
-exports.getAllTests = (req, res) => {
-    Test.getAll((tests) => {
-      res.json(tests);
-    });
-  };
-  
-  exports.getTestById = (req, res) => {
-    const { id } = req.params;
-    Test.getById(id, (test) => {
-      res.json(test);
-    });
-  };
-  
-  exports.createTest = (req, res) => {
-    const newTest = req.body;
-    Test.create(newTest, (insertId) => {
-      res.json({ id: insertId });
-    });
-  };
-  
-  exports.updateTest = (req, res) => {
-    const { id } = req.params;
-    const updatedTest = req.body;
-    Test.update(id, updatedTest, () => {
-      res.sendStatus(200);
-    });
-  };
-  
-  exports.deleteTest = (req, res) => {
-    const { id } = req.params;
-    Test.delete(id, () => {
-      res.sendStatus(200);
-    });
-  };
+exports.createTest = async (req, res) => {
+  try {
+    const test = await Test.create(req.body);
+    res.status(201).json(test);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.getAllTests = async (req, res) => {
+  try {
+    const tests = await Test.getAll();
+    res.status(200).json(tests);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
