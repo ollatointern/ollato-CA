@@ -1,5 +1,7 @@
 .d-wrapper{
-    
+
+    border: 2px solid red;
+    background: #E0E0E0;
     width: 100%;
     padding: 10px;
     height: 100%;

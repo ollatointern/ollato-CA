@@ -1,6 +1,6 @@
 // import React from 'react'
 import '../spCss/dashboard.css'
-import '../spCss/globalcss.css'
+// import '.../globalCss/globalcss.css'
 import { Link } from 'react-router-dom'
 // import { IoPieChart } from "react-icons/io5";
 import { Carousel } from 'react-responsive-carousel';
