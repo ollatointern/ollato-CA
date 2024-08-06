@@ -1,6 +1,6 @@
 .Navbar-container{
-    position: fixed;
-    width: 1300px;
+    /* position: fixed; */
+    width: 1200px;
     height: 80px;
     background: #e49c45;
     z-index: 10000;

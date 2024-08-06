@@ -161,7 +161,7 @@ return (
          showArrows={true}
                 autoPlay={true}
                 infiniteLoop={true}
-                showThumbs={true}
+                showThumbs={false}
                 showStatus={false}
                 interval={3000}
                 transitionTime={500}

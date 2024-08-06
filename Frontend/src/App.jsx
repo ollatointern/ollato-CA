@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './auth/Login.jsx';
 import Register from './auth/Register.jsx';
 import Student from './studentPanel/Student.jsx';
@@ -11,12 +11,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+        {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/student" element={<Student />} />
-          <Route path="/counsellor" element={<Counsellor />} />
-          <Route path="/center" element={<Center />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/student/*" element={<Student />} />
+          <Route path="/counsellor/*" element={<Counsellor />} />
+          <Route path="/center/*" element={<Center />} />
+          <Route path="/admin/*" element={<Admin />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
     </>

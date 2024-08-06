@@ -27,7 +27,7 @@ const [activeLink, setActiveLink]  = useState('Dashboard');
             <div className="sideBar-links">
                 <ul>
                    <li id={activeLink === 'Dashboard' ? 'active': '' }>
-                    <Link className='customLink' to='/' onClick={()=>handelSelectActive('Dashboard')} style={{
+                    <Link className='customLink' to='./Dashboard' onClick={()=>handelSelectActive('Dashboard')} style={{
                       display:'flex',
                       alignItems:'center',
                       gap:'6px'
